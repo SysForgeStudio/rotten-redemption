@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ctr7fqw36hi21"]
+
+[node name="Background" type="CanvasLayer"]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1922.0
+offset_bottom = 1084.0
