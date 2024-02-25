@@ -1,21 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=8 format=3 uid="uid://dnjbowjc3sx32"]
 
+[ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
 [ext_resource type="PackedScene" uid="uid://dgpsr34ysnpew" path="res://World/base.tscn" id="2_0s4u6"]
 [ext_resource type="PackedScene" uid="uid://qui5exiishrc" path="res://Player/player.tscn" id="2_7rait"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
 [ext_resource type="PackedScene" uid="uid://c2csgaxwfrns0" path="res://Mobs/mob.tscn" id="4_ib8n4"]
 
+[sub_resource type="Curve2D" id="Curve2D_tqtxj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 132, 257, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 334, 919, 0, 0, 0, 0, 135, 904, 0, 0, 0, 0, 132, 257)
+}
+point_count = 5
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_3q8xy")
+metadata/_edit_horizontal_guides_ = [257.0]
 
 [node name="Background" parent="." instance=ExtResource("1_u8ywu")]
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
-position = Vector2(1553, 146)
+position = Vector2(1553, 282)
 scale = Vector2(1, 1.76)
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
-position = Vector2(1639, 458)
+position = Vector2(641, 463)
 
 [node name="Wall" parent="." instance=ExtResource("3_gev3e")]
 position = Vector2(0, -1)
@@ -35,22 +44,22 @@ position = Vector2(1852, 1026)
 rotation = 1.5708
 scale = Vector2(1.63872, 10.6741)
 
-[node name="Mob" parent="." instance=ExtResource("4_ib8n4")]
-position = Vector2(310, 296)
-
-[node name="Mob2" parent="." instance=ExtResource("4_ib8n4")]
-position = Vector2(463, 464)
-
-[node name="Mob4" parent="." instance=ExtResource("4_ib8n4")]
-position = Vector2(635, 607)
-
-[node name="Mob5" parent="." instance=ExtResource("4_ib8n4")]
-position = Vector2(435, 781)
-
-[node name="Mob3" parent="." instance=ExtResource("4_ib8n4")]
-position = Vector2(302, 587)
-
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
 position = Vector2(1537, 131)
 scale = Vector2(0.44, 4.52)
+
+[node name="Mob" parent="." instance=ExtResource("4_ib8n4")]
+position = Vector2(863, 421)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(83, 3)
+curve = SubResource("Curve2D_tqtxj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(132, 257)
+
+[node name="WorldTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
