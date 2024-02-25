@@ -56,4 +56,7 @@ position = Vector2(132, 257)
 wait_time = 3.0
 autostart = true
 
+[node name="Mobs" type="Node" parent="."]
+
+[connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]

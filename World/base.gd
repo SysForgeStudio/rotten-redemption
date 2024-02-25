@@ -14,3 +14,4 @@ func _physics_process(delta):
 		damage = 0
 		get_node("CollisionShape2D").disabled = true
 		get_node("HurtBox/CollisionShape2D").disabled = true
+		base_health_depleted.emit()
