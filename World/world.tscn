@@ -20,11 +20,11 @@ metadata/_edit_horizontal_guides_ = [257.0]
 [node name="Background" parent="." instance=ExtResource("1_u8ywu")]
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
-position = Vector2(1553, 282)
+position = Vector2(1551, 280)
 scale = Vector2(1, 1.76)
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
-position = Vector2(641, 463)
+position = Vector2(1683, 519)
 
 [node name="Wall" parent="." instance=ExtResource("3_gev3e")]
 position = Vector2(0, -1)
@@ -46,8 +46,8 @@ scale = Vector2(1.63872, 10.6741)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1537, 131)
-scale = Vector2(0.44, 4.52)
+position = Vector2(1546, 255)
+scale = Vector2(0.44, 4.6)
 
 [node name="Mob" parent="." instance=ExtResource("4_ib8n4")]
 position = Vector2(863, 421)
@@ -60,6 +60,7 @@ curve = SubResource("Curve2D_tqtxj")
 position = Vector2(132, 257)
 
 [node name="WorldTimer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]

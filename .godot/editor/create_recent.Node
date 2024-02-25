@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Timer
 PathFollow2D
 Path2D
