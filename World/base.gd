@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var damage = 50
+var damage = 1
 var base_health = 100.0
 
 signal base_health_depleted
