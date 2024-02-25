@@ -6,6 +6,5 @@ func spawn_mob():
 	new_mob.global_position = get_node("Path2D/PathFollow2D").global_position
 	add_child(new_mob)
 
-
 func _on_world_timer_timeout():
 	spawn_mob()
