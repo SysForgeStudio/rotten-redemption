@@ -1,6 +1,8 @@
-Node
+Marker2D
+Sprite2D
 CollisionShape2D
 Area2D
+Node
 Timer
 PathFollow2D
 Path2D
