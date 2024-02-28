@@ -1,5 +1,10 @@
-Marker2D
+TextureRect
+TextureButton
+CanvasLayer
 Sprite2D
+ParallaxLayer
+ParallaxBackground
+Marker2D
 CollisionShape2D
 Area2D
 Node
