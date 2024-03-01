@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://qui5exiishrc"]
+[gd_scene load_steps=16 format=3 uid="uid://qui5exiishrc"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_l85k3"]
 [ext_resource type="Texture2D" uid="uid://ci6u375gmdi8w" path="res://Assets/PlayerAssets/Idle/torso_idle0.png" id="2_txxj8"]
 [ext_resource type="Texture2D" uid="uid://d3u62k32ft5mj" path="res://Assets/PlayerAssets/Idle/torso_idle1.png" id="3_vi16p"]
 [ext_resource type="Texture2D" uid="uid://dh5iv8uxbo8oh" path="res://Assets/PlayerAssets/Idle/torso_idle2.png" id="4_aoyr6"]
 [ext_resource type="Texture2D" uid="uid://dg5j6r4nll5dg" path="res://Assets/PlayerAssets/Idle/torso_idle3.png" id="5_3h5sn"]
+[ext_resource type="Texture2D" uid="uid://tk28hva6p8ns" path="res://Assets/PlayerAssets/Run/torso_run0.png" id="6_2mx1w"]
+[ext_resource type="Texture2D" uid="uid://cqpinllo0yoy1" path="res://Assets/PlayerAssets/Run/torso_run1.png" id="7_vq486"]
+[ext_resource type="Texture2D" uid="uid://b5sr6l80p4y84" path="res://Assets/PlayerAssets/Run/torso_run2.png" id="8_leokb"]
+[ext_resource type="Texture2D" uid="uid://bprlhe28x5wii" path="res://Assets/PlayerAssets/Run/torso_run3.png" id="9_5qyuq"]
+[ext_resource type="Texture2D" uid="uid://cgcd4h6t2cpcl" path="res://Assets/PlayerAssets/Run/torso_run4.png" id="10_7tt3j"]
+[ext_resource type="Texture2D" uid="uid://c8iobjecmb3k6" path="res://Assets/PlayerAssets/Run/torso_run5.png" id="11_c3d5i"]
+[ext_resource type="Texture2D" uid="uid://jbfodlsjys0" path="res://Assets/PlayerAssets/Run/torso_run6.png" id="12_idyil"]
+[ext_resource type="Texture2D" uid="uid://cen8uu0srkcny" path="res://Assets/PlayerAssets/Run/torso_run7.png" id="13_mm3xn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qk7ff"]
 size = Vector2(63.5, 107.5)
@@ -27,6 +35,35 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2mx1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vq486")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_leokb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5qyuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7tt3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c3d5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_idyil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mm3xn")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -43,7 +80,7 @@ shape = SubResource("RectangleShape2D_qk7ff")
 position = Vector2(30.75, 21.4531)
 scale = Vector2(2.65, 2.48438)
 sprite_frames = SubResource("SpriteFrames_lmsux")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
