@@ -27,7 +27,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _on_timer_timeout():
 	shooting = false
 	anim.play("Idle")
