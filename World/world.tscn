@@ -20,7 +20,7 @@ metadata/_edit_horizontal_guides_ = [257.0]
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
 position = Vector2(1551, 280)
-scale = Vector2(1, 1.76)
+scale = Vector2(1.2, 1.76)
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
 position = Vector2(1683, 519)
@@ -31,19 +31,18 @@ position = Vector2(1546, 255)
 scale = Vector2(0.44, 4.6)
 
 [node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
-visible = false
-position = Vector2(1834, 259)
+position = Vector2(1888, 262)
 scale = Vector2(0.44, 4.6)
 
 [node name="Base Wall Invisible2" parent="." instance=ExtResource("3_gev3e")]
 visible = false
 position = Vector2(1546, 255)
-scale = Vector2(8.84, 0.0799999)
+scale = Vector2(10.551, 0.0641294)
 
 [node name="Base Wall Invisible3" parent="." instance=ExtResource("3_gev3e")]
 visible = false
 position = Vector2(1540, 1014)
-scale = Vector2(8.84, 0.0799999)
+scale = Vector2(10.52, 0.0799999)
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(83, 3)
