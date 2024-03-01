@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 1200
+var health = 150
 var speed_multiplier = 1
 var direction_after_change
 var is_eating = false
