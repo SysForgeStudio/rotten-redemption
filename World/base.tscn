@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgpsr34ysnpew"]
+[gd_scene load_steps=6 format=3 uid="uid://dgpsr34ysnpew"]
 
 [ext_resource type="Script" path="res://World/base.gd" id="1_exwjg"]
 [ext_resource type="Texture2D" uid="uid://sjri063t4otk" path="res://Assets/city 1/base.png" id="2_58y40"]
+[ext_resource type="Texture2D" uid="uid://b1nwpwu57cjh0" path="res://Assets/city 1/base_walls.png" id="3_hdkbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qaugi"]
 size = Vector2(305, 431)
@@ -18,11 +19,20 @@ position = Vector2(142.5, 205.5)
 shape = SubResource("RectangleShape2D_qaugi")
 
 [node name="BaseFloor" type="TextureRect" parent="."]
+offset_left = -2.0
+offset_top = -6.0
+offset_right = 302.0
+offset_bottom = 429.0
+scale = Vector2(0.96, 0.96)
+texture = ExtResource("2_58y40")
+
+[node name="BaseWalls" type="TextureRect" parent="."]
 offset_left = -9.0
 offset_top = -13.0
 offset_right = 295.0
 offset_bottom = 422.0
-texture = ExtResource("2_58y40")
+texture = ExtResource("3_hdkbo")
+metadata/_edit_lock_ = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 scale = Vector2(0.04, 1)

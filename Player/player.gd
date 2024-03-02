@@ -24,7 +24,6 @@ func _physics_process(delta):
 	else:
 		if !shooting:
 			anim.play("Idle")
-
 	move_and_slide()
 
 func _on_timer_timeout():

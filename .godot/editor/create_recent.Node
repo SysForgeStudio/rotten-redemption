@@ -1,4 +1,5 @@
 TextureRect
+TileMap
 Timer
 AnimationPlayer
 AnimatedSprite2D
@@ -11,4 +12,3 @@ Marker2D
 CollisionShape2D
 Area2D
 Node
-PathFollow2D
