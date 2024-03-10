@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qui5exiishrc"]
+[gd_scene load_steps=29 format=3 uid="uid://qui5exiishrc"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_l85k3"]
 [ext_resource type="Texture2D" uid="uid://ci6u375gmdi8w" path="res://Assets/PlayerAssets/Idle/torso_idle0.png" id="2_txxj8"]
@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dojg74jmuwjh7" path="res://Assets/PlayerAssets/Shoot/shoot1.png" id="15_re3ff"]
 [ext_resource type="Texture2D" uid="uid://c3x4mgskw63sq" path="res://Assets/PlayerAssets/Shoot/shoot2.png" id="16_k8fcd"]
 [ext_resource type="Texture2D" uid="uid://c8hkjn1a6yjwq" path="res://Assets/PlayerAssets/Shoot/shoot3.png" id="17_4u6dh"]
+[ext_resource type="Script" path="res://Player/shooting_range.gd" id="18_kt3wp"]
+[ext_resource type="Texture2D" uid="uid://dul3fltx5dliq" path="res://Assets/PlayerAssets/debug_area2d.png" id="19_ivq26"]
+[ext_resource type="Texture2D" uid="uid://pautgf0f7b07" path="res://Assets/PlayerAssets/debug_shooting_point.png" id="20_acqxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qk7ff"]
 size = Vector2(63.5, 107.5)
@@ -208,11 +211,15 @@ _data = {
 "Shoot": SubResource("Animation_bru5e")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66ky6"]
+size = Vector2(797.5, 21.5)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(38, 41)
 collision_layer = 128
 collision_mask = 65
 script = ExtResource("1_l85k3")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(30.25, 30.25)
@@ -239,5 +246,27 @@ autoplay = "Idle"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+script = ExtResource("18_kt3wp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-400.25, 4.25)
+shape = SubResource("RectangleShape2D_66ky6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(-419, 3)
+scale = Vector2(1.12, 2.08)
+texture = ExtResource("19_ivq26")
+
+[node name="ShootingPoint" type="Marker2D" parent="."]
+position = Vector2(-25, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ShootingPoint"]
+visible = false
+scale = Vector2(1, 0.04)
+texture = ExtResource("20_acqxi")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

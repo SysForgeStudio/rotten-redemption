@@ -32,7 +32,6 @@ offset_top = -13.0
 offset_right = 295.0
 offset_bottom = 422.0
 texture = ExtResource("3_hdkbo")
-metadata/_edit_lock_ = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 scale = Vector2(0.04, 1)

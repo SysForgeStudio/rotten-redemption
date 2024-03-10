@@ -30,3 +30,8 @@ func _change_movement_to_player():
 	direction_after_change = global_position.direction_to(player.global_position)
 	velocity = direction_after_change * speed
 	move_and_slide()
+	
+func take_damage():
+	health -= 50
+	if health <= 0:
+		queue_free()

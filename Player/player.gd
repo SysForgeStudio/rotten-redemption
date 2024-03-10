@@ -14,9 +14,7 @@ func _physics_process(delta):
 	velocity = direction * SPEED
 	
 	if Input.is_action_just_pressed("shoot") and shooting == false:
-		shooting = true
-		anim.play("Shoot")
-		get_node("Timer").start()
+		shoot_gun()
 	
 	if velocity:
 		if shooting == false:
@@ -30,3 +28,13 @@ func _on_timer_timeout():
 	shooting = false
 	anim.play("Idle")
 	get_node("Timer").wait_time = 0.4
+
+func shoot_gun():
+	const BULLET = preload("res://Player/bullet.tscn")
+	var newBullet = BULLET.instantiate()
+	get_node("ShootingPoint").add_child(newBullet)
+	newBullet.global_position = get_node("ShootingPoint").global_position
+	shooting = true
+	anim.play("Shoot")
+	newBullet.shoot()
+	get_node("Timer").start()
