@@ -101,7 +101,7 @@ offset_bottom = 86.0
 grow_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_032p2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tld4h")
-max_value = 360.0
+max_value = 180.0
 show_percentage = false
 
 [node name="Night" type="Label" parent="CanvasLayer"]
@@ -122,7 +122,7 @@ offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
 
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 360.0
+wait_time = 180.0
 one_shot = true
 autostart = true
 
