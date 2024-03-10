@@ -1,16 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=10 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
 [ext_resource type="PackedScene" uid="uid://dgpsr34ysnpew" path="res://World/base.tscn" id="2_0s4u6"]
 [ext_resource type="PackedScene" uid="uid://qui5exiishrc" path="res://Player/player.tscn" id="2_7rait"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
+[ext_resource type="Texture2D" uid="uid://yiab7dhr7rud" path="res://Assets/UI/base_health.png" id="6_c5on7"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 132, 257, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 334, 919, 0, 0, 0, 0, 135, 904, 0, 0, 0, 0, 132, 257)
 }
 point_count = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_032p2"]
+bg_color = Color(0, 0.196078, 0.427451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tld4h"]
+bg_color = Color(0, 0.25098, 0.784314, 1)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3q8xy")
@@ -57,6 +64,32 @@ wait_time = 3.0
 autostart = true
 
 [node name="Mobs" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -426.0
+offset_top = 12.0
+offset_right = -6.0
+offset_bottom = 92.0
+grow_horizontal = 0
+texture = ExtResource("6_c5on7")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -386.0
+offset_top = 27.0
+offset_right = -39.0
+offset_bottom = 53.0
+grow_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_032p2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tld4h")
+show_percentage = false
 
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]

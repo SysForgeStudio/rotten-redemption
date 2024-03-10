@@ -1,14 +1,14 @@
+TextureRect
+ProgressBar
+CanvasLayer
 Sprite2D
 Timer
 CollisionShape2D
 Area2D
 Marker2D
-TextureRect
 TileMap
 AnimationPlayer
 AnimatedSprite2D
 TextureButton
-CanvasLayer
 ParallaxLayer
 ParallaxBackground
-Node

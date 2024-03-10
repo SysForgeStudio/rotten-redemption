@@ -1,11 +1,13 @@
 extends Node2D
 
+func _physics_process(delta):
+	get_node("CanvasLayer/ProgressBar").value = Game.base_health
+
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
 	get_node("Path2D/PathFollow2D").progress_ratio = randf()
 	new_mob.global_position = get_node("Path2D/PathFollow2D").global_position
 	get_node("Mobs").add_child(new_mob)
-	
 
 func _apply_movement_on_children(node):
 	for child in node.get_children():
