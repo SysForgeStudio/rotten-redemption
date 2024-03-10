@@ -1,3 +1,3 @@
 extends Node
 
-var base_health = 100
+var base_health = 200

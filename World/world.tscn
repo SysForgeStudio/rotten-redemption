@@ -59,7 +59,6 @@ curve = SubResource("Curve2D_tqtxj")
 position = Vector2(132, 257)
 
 [node name="WorldTimer" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true
 
 [node name="Mobs" type="Node" parent="."]
@@ -77,6 +76,7 @@ offset_bottom = 53.0
 grow_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_032p2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tld4h")
+max_value = 200.0
 show_percentage = false
 
 [node name="Base" type="Label" parent="CanvasLayer"]
@@ -115,6 +115,12 @@ offset_bottom = 83.0
 grow_horizontal = 0
 text = "Time until dawn"
 
+[node name="GameOver" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1947.0
+offset_bottom = 1087.0
+color = Color(0, 0, 0, 1)
+
 [node name="WinTimer" type="Timer" parent="."]
 wait_time = 360.0
 one_shot = true
@@ -122,3 +128,4 @@ autostart = true
 
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]

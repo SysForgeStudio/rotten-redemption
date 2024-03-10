@@ -22,3 +22,9 @@ func _on_world_timer_timeout():
 
 func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
+
+
+func _on_win_timer_timeout():
+	var color_tween = get_tree().create_tween()
+	var screen = get_node("CanvasLayer/GameOver")
+	color_tween.tween_property(screen, "modulate",Color.BLACK,5)
