@@ -8,7 +8,6 @@ func _physics_process(delta):
 	
 	spawn_time = randf_range(0.6,2.4)
 	get_node("WorldTimer").wait_time = spawn_time
-	print(spawn_time)
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
