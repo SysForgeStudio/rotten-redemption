@@ -1,7 +1,8 @@
 extends Node2D
 
 func _physics_process(delta):
-	get_node("CanvasLayer/ProgressBar").value = Game.base_health
+	get_node("CanvasLayer/BaseHealth").value = Game.base_health
+	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
