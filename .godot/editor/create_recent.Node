@@ -1,7 +1,7 @@
 ColorRect
+Timer
 ProgressBar
 Label
-Timer
 TextureRect
 CanvasLayer
 Sprite2D
@@ -12,4 +12,3 @@ TileMap
 AnimationPlayer
 AnimatedSprite2D
 TextureButton
-ParallaxLayer

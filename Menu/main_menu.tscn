@@ -141,5 +141,12 @@ offset_bottom = 972.0
 texture_normal = ExtResource("11_8kyf0")
 texture_hover = ExtResource("12_3n4j0")
 
+[node name="NextScene" type="ColorRect" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 2299.0
+offset_bottom = 1089.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
