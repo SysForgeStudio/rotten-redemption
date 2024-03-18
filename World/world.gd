@@ -2,7 +2,6 @@ extends Node2D
 
 var spawn_time
 
-
 func _physics_process(delta):
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
@@ -30,12 +29,10 @@ func _on_world_timer_timeout():
 	if Game.game_over == false:
 		_spawn_mob()
 
-
 func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
 	Game.game_over = true
 	_screen_blackout()
-
 
 func _on_win_timer_timeout():
 	Game.game_over = true
