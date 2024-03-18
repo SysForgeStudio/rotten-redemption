@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0mr7qpf77y6w"]
+[gd_scene load_steps=17 format=3 uid="uid://d0mr7qpf77y6w"]
 
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_6hlw5"]
 [ext_resource type="Texture2D" uid="uid://do4sjwbtuvc5p" path="res://Assets/city 1/1.png" id="1_3012k"]
@@ -13,6 +13,43 @@
 [ext_resource type="Texture2D" uid="uid://bnjnnjnedwsdv" path="res://Menu/play_hover.png" id="10_7ah47"]
 [ext_resource type="Texture2D" uid="uid://dgcit577vycj5" path="res://Menu/quit_normal.png" id="11_8kyf0"]
 [ext_resource type="Texture2D" uid="uid://bwh3ftc34g012" path="res://Menu/quit_hover.png" id="12_3n4j0"]
+
+[sub_resource type="Animation" id="Animation_0cj47"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/NextScene:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_aw863"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/NextScene:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3m8kc"]
+_data = {
+"RESET": SubResource("Animation_aw863"),
+"fade": SubResource("Animation_0cj47")
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_6hlw5")
@@ -142,11 +179,16 @@ texture_normal = ExtResource("11_8kyf0")
 texture_hover = ExtResource("12_3n4j0")
 
 [node name="NextScene" type="ColorRect" parent="CanvasLayer"]
-visible = false
-modulate = Color(1, 1, 1, 0)
 offset_right = 2299.0
 offset_bottom = 1089.0
-color = Color(0, 0, 0, 1)
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3m8kc")
+}
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

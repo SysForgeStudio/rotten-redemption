@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=15 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -6,62 +6,96 @@
 [ext_resource type="PackedScene" uid="uid://qui5exiishrc" path="res://Player/player.tscn" id="2_7rait"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
 
-[sub_resource type="Curve2D" id="Curve2D_tqtxj"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 132, 257, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 334, 919, 0, 0, 0, 0, 135, 904, 0, 0, 0, 0, 132, 257)
-}
-point_count = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_032p2"]
 bg_color = Color(0, 0.196078, 0.427451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tld4h"]
 bg_color = Color(0, 0.25098, 0.784314, 1)
 
+[sub_resource type="Curve2D" id="Curve2D_tqtxj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 132, 257, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 334, 919, 0, 0, 0, 0, 135, 904, 0, 0, 0, 0, 132, 257)
+}
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_jv7t3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartGame:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o1o7i"]
+resource_name = "fade_in"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartGame:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xsos"]
+_data = {
+"RESET": SubResource("Animation_jv7t3"),
+"fade_in": SubResource("Animation_o1o7i")
+}
+
+[sub_resource type="Animation" id="Animation_a8ewr"]
+resource_name = "fade_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/GameOver:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4sbvv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/GameOver:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vo0sj"]
+_data = {
+"RESET": SubResource("Animation_4sbvv"),
+"fade_out": SubResource("Animation_a8ewr")
+}
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_3q8xy")
 metadata/_edit_horizontal_guides_ = [257.0]
-
-[node name="Background" parent="." instance=ExtResource("1_u8ywu")]
-
-[node name="Base" parent="." instance=ExtResource("2_0s4u6")]
-position = Vector2(1551, 280)
-scale = Vector2(1.2, 1.76)
-
-[node name="Player" parent="." instance=ExtResource("2_7rait")]
-position = Vector2(1683, 519)
-
-[node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
-visible = false
-position = Vector2(1546, 255)
-scale = Vector2(0.44, 4.6)
-
-[node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
-visible = false
-position = Vector2(1888, 262)
-scale = Vector2(0.44, 4.6)
-
-[node name="Base Wall Invisible2" parent="." instance=ExtResource("3_gev3e")]
-visible = false
-position = Vector2(1546, 255)
-scale = Vector2(10.551, 0.0641294)
-
-[node name="Base Wall Invisible3" parent="." instance=ExtResource("3_gev3e")]
-visible = false
-position = Vector2(1540, 1014)
-scale = Vector2(10.52, 0.0799999)
-
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(83, 3)
-curve = SubResource("Curve2D_tqtxj")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(132, 257)
-
-[node name="WorldTimer" type="Timer" parent="."]
-autostart = true
-
-[node name="Mobs" type="Node" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -116,16 +150,74 @@ grow_horizontal = 0
 text = "Time until dawn"
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
+offset_right = 1947.0
+offset_bottom = 1087.0
+scale = Vector2(1.28, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="StartGame" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
+
+[node name="Background" parent="." instance=ExtResource("1_u8ywu")]
+
+[node name="Base" parent="." instance=ExtResource("2_0s4u6")]
+position = Vector2(1551, 280)
+scale = Vector2(1.2, 1.76)
+
+[node name="Player" parent="." instance=ExtResource("2_7rait")]
+position = Vector2(1683, 519)
+
+[node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1546, 255)
+scale = Vector2(0.44, 4.6)
+
+[node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1888, 262)
+scale = Vector2(0.44, 4.6)
+
+[node name="Base Wall Invisible2" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1546, 255)
+scale = Vector2(10.551, 0.0641294)
+
+[node name="Base Wall Invisible3" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1540, 1014)
+scale = Vector2(10.52, 0.0799999)
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(83, 3)
+curve = SubResource("Curve2D_tqtxj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(132, 257)
+
+[node name="WorldTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Mobs" type="Node" parent="."]
 
 [node name="WinTimer" type="Timer" parent="."]
 wait_time = 180.0
 one_shot = true
 autostart = true
 
+[node name="AnimationPlayerFadeIn" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CanvasLayer")
+libraries = {
+"": SubResource("AnimationLibrary_4xsos")
+}
+
+[node name="AnimationPlayerFadeOut" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vo0sj")
+}
+
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayerFadeOut" to="." method="_on_animation_player_fade_out_animation_finished"]

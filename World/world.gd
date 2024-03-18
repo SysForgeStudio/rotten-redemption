@@ -3,6 +3,8 @@ extends Node2D
 var spawn_time
 
 func _physics_process(delta):
+	_game_start_fade()
+	
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 	
@@ -10,8 +12,7 @@ func _physics_process(delta):
 	get_node("WorldTimer").wait_time = spawn_time
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
-		_screen_blackout()
-		print("Game Over")
+		_change_scene_to_main_menu()
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
@@ -32,12 +33,17 @@ func _on_world_timer_timeout():
 func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
 	Game.game_over = true
-	_screen_blackout()
+	_change_scene_to_main_menu()
 
 func _on_win_timer_timeout():
 	Game.game_over = true
 
-func _screen_blackout():
-	var color_tween = get_tree().create_tween()
-	var screen = get_node("CanvasLayer/GameOver")
-	color_tween.tween_property(screen, "modulate",Color.BLACK,4)
+func _game_start_fade():
+	get_node("AnimationPlayerFadeIn").play("fade_in")
+
+func _change_scene_to_main_menu():
+	get_node("AnimationPlayerFadeOut").play("fade_out")
+
+func _on_animation_player_fade_out_animation_finished(fade_out):
+	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+	print("New scene")
