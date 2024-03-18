@@ -2,12 +2,17 @@ extends Node2D
 
 var spawn_time
 
+
 func _physics_process(delta):
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 	
 	spawn_time = randf_range(0.6,2.4)
 	get_node("WorldTimer").wait_time = spawn_time
+	
+	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
+		_screen_blackout()
+		print("Game Over")
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
@@ -22,14 +27,20 @@ func _apply_movement_on_children(node):
 			child._change_movement_to_player()
 
 func _on_world_timer_timeout():
-	_spawn_mob()
+	if Game.game_over == false:
+		_spawn_mob()
 
 
 func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
+	Game.game_over = true
+	_screen_blackout()
 
 
 func _on_win_timer_timeout():
+	Game.game_over = true
+
+func _screen_blackout():
 	var color_tween = get_tree().create_tween()
 	var screen = get_node("CanvasLayer/GameOver")
-	color_tween.tween_property(screen, "modulate",Color.BLACK,5)
+	color_tween.tween_property(screen, "modulate",Color.BLACK,4)
