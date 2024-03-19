@@ -9,7 +9,9 @@ func _physics_process(delta):
 	
 	if overlapping_mobs.size() > 0:
 		Game.base_health -= damage * overlapping_mobs.size() * delta
+	
 	if Game.base_health <= 0:
+		get_node("BaseWalls").texture = load("res://Assets/city 1/base_broken.png")
 		damage = 0
 		get_node("CollisionShape2D").disabled = true
 		get_node("HurtBox/CollisionShape2D").disabled = true

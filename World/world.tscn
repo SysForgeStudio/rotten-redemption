@@ -174,7 +174,7 @@ position = Vector2(1683, 519)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1579, 427)
+position = Vector2(1600, 433)
 scale = Vector2(-0.610352, 2.37065)
 
 [node name="Base Wall Invisible5" parent="." instance=ExtResource("3_gev3e")]
@@ -209,7 +209,7 @@ curve = SubResource("Curve2D_tqtxj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(129, 257)
-rotation = 0.322856
+rotation = 0.322853
 
 [node name="WorldTimer" type="Timer" parent="."]
 autostart = true
