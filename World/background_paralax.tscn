@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt16bvwahcil4"]
+
+[ext_resource type="Texture2D" uid="uid://bwfv4fjn2nkfa" path="res://Assets/Forest/trees.png" id="1_qsnej"]
+[ext_resource type="Texture2D" uid="uid://d3d1j18qy6ls1" path="res://Assets/Forest/bg_trees.png" id="1_tyj4w"]
+[ext_resource type="Texture2D" uid="uid://b1bp87slsjaa4" path="res://Assets/Forest/light_trees.png" id="2_gnhdi"]
+
+[sub_resource type="GDScript" id="GDScript_wg68s"]
+script/source = "extends ParallaxBackground
+
+var scrolling_speed = 100
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	scroll_offset.x -= scrolling_speed * delta
+"
+
+[node name="BackgroundParalax" type="ParallaxBackground"]
+script = SubResource("GDScript_wg68s")
+
+[node name="BG" type="ParallaxLayer" parent="."]
+position = Vector2(217, 30)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG"]
+position = Vector2(750.5, 27.5)
+scale = Vector2(4.12708, 1.20221)
+texture = ExtResource("1_tyj4w")
+
+[node name="LightTrees" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1917, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="LightTrees"]
+position = Vector2(945, -61)
+texture = ExtResource("2_gnhdi")
+
+[node name="DarkTrees" type="ParallaxLayer" parent="."]
+position = Vector2(-4, -191)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1917, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="DarkTrees"]
+position = Vector2(953, 133)
+texture = ExtResource("1_qsnej")

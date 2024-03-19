@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=16 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
 [ext_resource type="PackedScene" uid="uid://dgpsr34ysnpew" path="res://World/base.tscn" id="2_0s4u6"]
 [ext_resource type="PackedScene" uid="uid://qui5exiishrc" path="res://Player/player.tscn" id="2_7rait"]
 [ext_resource type="Texture2D" uid="uid://bcc5t86xfk08k" path="res://Menu/barUnder.png" id="2_gocse"]
+[ext_resource type="PackedScene" uid="uid://dt16bvwahcil4" path="res://World/background_paralax.tscn" id="2_lvui1"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
 [ext_resource type="Texture2D" uid="uid://cxgrlo83rs6r3" path="res://Menu/barProgress.png" id="3_it0oi"]
 
@@ -93,6 +94,9 @@ _data = {
 script = ExtResource("1_3q8xy")
 metadata/_edit_horizontal_guides_ = [257.0]
 
+[node name="TreesParalax" parent="." instance=ExtResource("2_lvui1")]
+layer = 0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BaseHealth" type="TextureProgressBar" parent="CanvasLayer"]
@@ -154,6 +158,7 @@ scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
