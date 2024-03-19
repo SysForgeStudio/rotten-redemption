@@ -1,9 +1,10 @@
+TextureProgressBar
+TextureRect
 AnimationPlayer
 ColorRect
 Timer
 ProgressBar
 Label
-TextureRect
 CanvasLayer
 Sprite2D
 CollisionShape2D
@@ -11,4 +12,3 @@ Area2D
 Marker2D
 TileMap
 AnimatedSprite2D
-TextureButton

@@ -33,6 +33,7 @@ func _on_world_timer_timeout():
 func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
 	Game.game_over = true
+	get_node("WinTimer").paused = true
 	_change_scene_to_main_menu()
 
 func _on_win_timer_timeout():

@@ -4,13 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
 [ext_resource type="PackedScene" uid="uid://dgpsr34ysnpew" path="res://World/base.tscn" id="2_0s4u6"]
 [ext_resource type="PackedScene" uid="uid://qui5exiishrc" path="res://Player/player.tscn" id="2_7rait"]
+[ext_resource type="Texture2D" uid="uid://bcc5t86xfk08k" path="res://Menu/barUnder.png" id="2_gocse"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_032p2"]
-bg_color = Color(0, 0.196078, 0.427451, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tld4h"]
-bg_color = Color(0, 0.25098, 0.784314, 1)
+[ext_resource type="Texture2D" uid="uid://cxgrlo83rs6r3" path="res://Menu/barProgress.png" id="3_it0oi"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
@@ -99,7 +95,7 @@ metadata/_edit_horizontal_guides_ = [257.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="BaseHealth" type="ProgressBar" parent="CanvasLayer"]
+[node name="BaseHealth" type="TextureProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -108,44 +104,44 @@ offset_top = 27.0
 offset_right = -39.0
 offset_bottom = 53.0
 grow_horizontal = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_032p2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_tld4h")
 max_value = 200.0
-show_percentage = false
+texture_under = ExtResource("2_gocse")
+texture_progress = ExtResource("3_it0oi")
+texture_progress_offset = Vector2(10, 10)
 
 [node name="Base" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -237.0
-offset_top = 27.0
-offset_right = -200.0
-offset_bottom = 50.0
+offset_left = -235.0
+offset_top = 37.0
+offset_right = -198.0
+offset_bottom = 60.0
 grow_horizontal = 0
 text = "Base"
 
-[node name="NightTimer" type="ProgressBar" parent="CanvasLayer"]
+[node name="NightTimer" type="TextureProgressBar" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -386.0
-offset_top = 60.0
+offset_top = 95.0
 offset_right = -39.0
-offset_bottom = 86.0
+offset_bottom = 121.0
 grow_horizontal = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_032p2")
-theme_override_styles/fill = SubResource("StyleBoxFlat_tld4h")
 max_value = 180.0
-show_percentage = false
+texture_under = ExtResource("2_gocse")
+texture_progress = ExtResource("3_it0oi")
+texture_progress_offset = Vector2(10, 10)
 
 [node name="Night" type="Label" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -276.0
-offset_top = 60.0
+offset_top = 105.0
 offset_right = -151.0
-offset_bottom = 83.0
+offset_bottom = 128.0
 grow_horizontal = 0
 text = "Time until dawn"
 
