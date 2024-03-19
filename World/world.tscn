@@ -150,15 +150,14 @@ grow_horizontal = 0
 text = "Time until dawn"
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]
-offset_left = 1.0
+offset_left = -13.0
 offset_top = -30.0
-offset_right = 1948.0
+offset_right = 1945.0
 offset_bottom = 1057.0
 scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
-visible = false
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
