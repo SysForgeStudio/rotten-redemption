@@ -14,9 +14,9 @@ bg_color = Color(0, 0.25098, 0.784314, 1)
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 132, 257, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 334, 919, 0, 0, 0, 0, 135, 904, 0, 0, 0, 0, 132, 257)
+"points": PackedVector2Array(0, 0, 0, 0, 129, 257, 0, 0, 0, 0, 239.175, 293.86, 0, 0, 0, 0, 336, 257, 0, 0, 0, 0, 340, 891, 0, 0, 0, 0, 226.954, 877.815, 0, 0, 0, 0, 119, 888, 0, 0, 0, 0, 132, 257)
 }
-point_count = 5
+point_count = 7
 
 [sub_resource type="Animation" id="Animation_jv7t3"]
 length = 0.001
@@ -56,6 +56,21 @@ _data = {
 "fade_in": SubResource("Animation_o1o7i")
 }
 
+[sub_resource type="Animation" id="Animation_4sbvv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/GameOver:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_a8ewr"]
 resource_name = "fade_out"
 length = 4.0
@@ -70,21 +85,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_4sbvv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/GameOver:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vo0sj"]
@@ -150,12 +150,15 @@ grow_horizontal = 0
 text = "Time until dawn"
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]
-offset_right = 1947.0
-offset_bottom = 1087.0
+offset_left = 1.0
+offset_top = -30.0
+offset_right = 1948.0
+offset_bottom = 1057.0
 scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
@@ -163,15 +166,15 @@ color = Color(0, 0, 0, 1)
 [node name="Background" parent="." instance=ExtResource("1_u8ywu")]
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
-position = Vector2(1551, 280)
-scale = Vector2(1.2, 1.76)
+position = Vector2(1523, 277)
+scale = Vector2(1.28, 1.76)
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
 position = Vector2(1683, 519)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1546, 255)
+position = Vector2(1615, 268)
 scale = Vector2(0.44, 4.6)
 
 [node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
@@ -181,20 +184,22 @@ scale = Vector2(0.44, 4.6)
 
 [node name="Base Wall Invisible2" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1546, 255)
+position = Vector2(1540, 261)
 scale = Vector2(10.551, 0.0641294)
 
 [node name="Base Wall Invisible3" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1540, 1014)
+position = Vector2(1567, 933)
 scale = Vector2(10.52, 0.0799999)
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(83, 3)
+position = Vector2(89.1538, 200.587)
+scale = Vector2(0.9819, 0.709779)
 curve = SubResource("Curve2D_tqtxj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(132, 257)
+position = Vector2(129, 257)
+rotation = 0.322856
 
 [node name="WorldTimer" type="Timer" parent="."]
 autostart = true
