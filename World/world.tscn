@@ -129,7 +129,7 @@ offset_top = 95.0
 offset_right = -39.0
 offset_bottom = 121.0
 grow_horizontal = 0
-max_value = 180.0
+max_value = 240.0
 texture_under = ExtResource("2_gocse")
 texture_progress = ExtResource("3_it0oi")
 texture_progress_offset = Vector2(10, 10)
@@ -213,7 +213,7 @@ autostart = true
 [node name="Mobs" type="Node" parent="."]
 
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 240.0
 one_shot = true
 autostart = true
 
