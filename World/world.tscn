@@ -174,8 +174,18 @@ position = Vector2(1683, 519)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1615, 268)
-scale = Vector2(0.44, 4.6)
+position = Vector2(1579, 427)
+scale = Vector2(-0.610352, 2.37065)
+
+[node name="Base Wall Invisible5" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1607, 322)
+scale = Vector2(-0.610352, 0.690648)
+
+[node name="Base Wall Invisible6" parent="." instance=ExtResource("3_gev3e")]
+visible = false
+position = Vector2(1620, 789)
+scale = Vector2(-0.610352, 0.690648)
 
 [node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
 visible = false
