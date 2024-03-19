@@ -8,7 +8,7 @@ func _physics_process(delta):
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 	
-	spawn_time = randf_range(0.4,2.2)
+	spawn_time = randf_range(0.4,2.5)
 	get_node("WorldTimer").wait_time = spawn_time
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
@@ -47,4 +47,3 @@ func _change_scene_to_main_menu():
 
 func _on_animation_player_fade_out_animation_finished(fade_out):
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
-	print("New scene")
