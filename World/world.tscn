@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=24 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -8,7 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dt16bvwahcil4" path="res://World/background_paralax.tscn" id="2_lvui1"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
 [ext_resource type="Texture2D" uid="uid://cxgrlo83rs6r3" path="res://Menu/barProgress.png" id="3_it0oi"]
+[ext_resource type="Texture2D" uid="uid://bwiyq614pukgw" path="res://Assets/City Park/Clock_Moss.png" id="4_xxwft"]
+[ext_resource type="Texture2D" uid="uid://b7x4x0aa1dvul" path="res://Assets/City Park/Grass_WTrash.png" id="6_67of1"]
+[ext_resource type="Texture2D" uid="uid://trlghlaib7tc" path="res://Assets/City Park/Map_Moss.png" id="8_2dqx7"]
 [ext_resource type="Texture2D" uid="uid://8o8in4kdyfw2" path="res://Assets/City Park/Grass.png" id="9_e7sct"]
+[ext_resource type="Texture2D" uid="uid://dgxkitgo746t0" path="res://Assets/City Park/StopSign_NoFlowers_Moss.png" id="12_nxnsj"]
+[ext_resource type="Texture2D" uid="uid://cf7k8oa6y0kw7" path="res://Assets/City Park/TrafficLight_Moss.png" id="13_fcqnr"]
+[ext_resource type="Texture2D" uid="uid://xh0765il3fi" path="res://Assets/City Park/VendingMachine_Moss.png" id="14_l8nwg"]
+[ext_resource type="Texture2D" uid="uid://dyh45plvd8qj4" path="res://Assets/Forest/walkway.png" id="15_lx3a6"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
@@ -102,67 +109,187 @@ metadata/_edit_vertical_guides_ = [2633.0]
 
 [node name="LevelDesign" type="Node" parent="."]
 
+[node name="VendingMachineMoss" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(975.15, 1128.05)
+rotation = -0.0421393
+scale = Vector2(0.694286, 0.694286)
+texture = ExtResource("14_l8nwg")
+
+[node name="Walkway" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(1735, 1204)
+scale = Vector2(1.43906, 0.9)
+texture = ExtResource("15_lx3a6")
+
+[node name="Grass" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(956.4, 1204.6)
+rotation = -0.0421393
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass2" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(1028.6, 1197.6)
+rotation = -0.0421393
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass3" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(937.2, 1199.6)
+rotation = -0.0421393
+scale = Vector2(0.640001, 0.640001)
+texture = ExtResource("9_e7sct")
+
+[node name="ClockMoss" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(1945, 208)
+scale = Vector2(0.616667, 0.616667)
+texture = ExtResource("4_xxwft")
+
 [node name="BottomGrass" type="Node" parent="LevelDesign"]
 
 [node name="Grass" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1827, 1281)
+position = Vector2(1799, 1225)
+rotation = 0.0868934
 texture = ExtResource("9_e7sct")
 
 [node name="Grass2" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1678, 1281)
+position = Vector2(1664, 1220)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass3" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1529, 1281)
+position = Vector2(1547, 1228)
+rotation = -0.0826143
 texture = ExtResource("9_e7sct")
 
 [node name="Grass4" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1403, 1281)
+position = Vector2(1404, 1246)
+rotation = -0.119584
 texture = ExtResource("9_e7sct")
 
 [node name="Grass5" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1260, 1281)
+position = Vector2(1267, 1255)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass6" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1117, 1281)
+position = Vector2(1117, 1259)
+rotation = -0.0166163
+texture = ExtResource("9_e7sct")
+
+[node name="Grass18" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1140, 1188)
+rotation = -0.0166163
+texture = ExtResource("9_e7sct")
+
+[node name="Grass19" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1289, 1180)
+rotation = -0.0819089
+texture = ExtResource("9_e7sct")
+
+[node name="Grass20" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1433, 1168)
+rotation = -0.0819089
+texture = ExtResource("9_e7sct")
+
+[node name="Grass21" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1582, 1155)
+rotation = -0.0819089
+texture = ExtResource("9_e7sct")
+
+[node name="Grass30" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1698.26, 990.216)
+rotation = 0.017641
+scale = Vector2(1.15327, 1)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass22" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1723, 1154)
+rotation = 0.0414337
+texture = ExtResource("9_e7sct")
+
+[node name="Grass23" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1838, 1165)
+rotation = 0.117053
+texture = ExtResource("9_e7sct")
+
+[node name="Grass24" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1971, 1171)
+rotation = -0.0182239
+texture = ExtResource("9_e7sct")
+
+[node name="Grass25" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2115, 1161)
+rotation = -0.0922417
+texture = ExtResource("9_e7sct")
+
+[node name="Grass26" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2256, 1150)
+rotation = -0.0755124
+texture = ExtResource("9_e7sct")
+
+[node name="Grass27" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2411, 1140)
+rotation = -0.0395572
+texture = ExtResource("9_e7sct")
+
+[node name="Grass28" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2561, 1135)
+rotation = -0.0172959
+texture = ExtResource("9_e7sct")
+
+[node name="Grass29" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2696, 1134)
+rotation = -0.0402159
 texture = ExtResource("9_e7sct")
 
 [node name="Grass7" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(979, 1281)
+position = Vector2(1016, 1262)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass8" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(892, 1281)
+position = Vector2(891, 1264)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass9" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(760, 1281)
-texture = ExtResource("9_e7sct")
-
-[node name="Grass10" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(2371, 1280.5)
+position = Vector2(926.5, 1266)
+scale = Vector2(1.28125, 1)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass14" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(2505, 1280.5)
+position = Vector2(2468, 1212)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass15" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(2617, 1280.5)
+position = Vector2(2359, 1218)
+rotation = -0.0509997
+texture = ExtResource("9_e7sct")
+
+[node name="Grass16" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2604, 1210)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass11" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(2243, 1280.5)
+position = Vector2(2256, 1225)
+rotation = -0.03538
 texture = ExtResource("9_e7sct")
 
 [node name="Grass12" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(2103, 1280.5)
+position = Vector2(2109, 1231)
+rotation = -0.056496
 texture = ExtResource("9_e7sct")
 
 [node name="Grass13" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1961, 1280.5)
+position = Vector2(2020, 1233)
 texture = ExtResource("9_e7sct")
+
+[node name="Grass17" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1923, 1234)
+rotation = 0.0339883
+scale = Vector2(0.994631, 0.971103)
+texture = ExtResource("9_e7sct")
+
+[node name="MapMoss" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2198.35, 1082.22)
+rotation = -0.0537363
+scale = Vector2(0.692838, 0.692838)
+texture = ExtResource("8_2dqx7")
 
 [node name="UpperGrass" type="Node" parent="LevelDesign"]
 
@@ -226,6 +353,21 @@ texture = ExtResource("9_e7sct")
 position = Vector2(1938, 209.5)
 texture = ExtResource("9_e7sct")
 
+[node name="StopSignNoFlowersMoss" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(1392, 155)
+scale = Vector2(0.488235, 0.488235)
+texture = ExtResource("12_nxnsj")
+
+[node name="TrafficLightMoss" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(897, 116)
+scale = Vector2(0.369354, 0.369354)
+texture = ExtResource("13_fcqnr")
+
+[node name="GrassWTrash" type="Sprite2D" parent="LevelDesign"]
+position = Vector2(1845, 986)
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("6_67of1")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BaseHealth" type="TextureProgressBar" parent="CanvasLayer"]
@@ -280,23 +422,23 @@ text = "Time until dawn"
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]
 offset_left = -13.0
-offset_top = -30.0
-offset_right = 1945.0
-offset_bottom = 1057.0
+offset_top = -317.0
+offset_right = 3053.0
+offset_bottom = 1385.0
 scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
-visible = false
-offset_right = 1947.0
-offset_bottom = 1087.0
+offset_top = -434.0
+offset_right = 3672.0
+offset_bottom = 1616.0
 color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
 position = Vector2(1523, 277)
 scale = Vector2(1.28, 1.76)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
 position = Vector2(1648, 845)
