@@ -1,10 +1,10 @@
 extends Node2D
 
-var next_scene
-
 func _on_play_button_pressed():
 	_screen_blackout()
 	_change_scene()
+	Game.base_health = 200
+	Game.game_over = false
 
 func _on_quit_button_pressed():
 	get_tree().quit()
