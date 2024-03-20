@@ -157,7 +157,6 @@ scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
-visible = false
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
@@ -202,7 +201,7 @@ position = Vector2(1567, 933)
 scale = Vector2(10.52, 0.0799999)
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(95, 200)
+position = Vector2(297, 200)
 scale = Vector2(0.9819, 0.709779)
 curve = SubResource("Curve2D_tqtxj")
 
