@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt16bvwahcil4"]
+[gd_scene load_steps=6 format=3 uid="uid://dt16bvwahcil4"]
 
 [ext_resource type="Texture2D" uid="uid://bwfv4fjn2nkfa" path="res://Assets/Forest/trees.png" id="1_qsnej"]
 [ext_resource type="Texture2D" uid="uid://d3d1j18qy6ls1" path="res://Assets/Forest/bg_trees.png" id="1_tyj4w"]
 [ext_resource type="Texture2D" uid="uid://b1bp87slsjaa4" path="res://Assets/Forest/light_trees.png" id="2_gnhdi"]
+[ext_resource type="Texture2D" uid="uid://b7u5fbcu8wqw5" path="res://Assets/Forest/road.png" id="4_w7eoi"]
 
 [sub_resource type="GDScript" id="GDScript_wg68s"]
 script/source = "extends ParallaxBackground
@@ -42,3 +43,11 @@ motion_mirroring = Vector2(1917, 0)
 [node name="Sprite2D" type="Sprite2D" parent="DarkTrees"]
 position = Vector2(953, 133)
 texture = ExtResource("1_qsnej")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(1917, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(960, 148)
+texture = ExtResource("4_w7eoi")
