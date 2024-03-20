@@ -21,11 +21,11 @@ script = SubResource("GDScript_wg68s")
 
 [node name="BG" type="ParallaxLayer" parent="."]
 position = Vector2(217, 30)
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(2100, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG"]
-position = Vector2(750.5, 27.5)
-scale = Vector2(4.12708, 1.20221)
+position = Vector2(903.5, 27.5)
+scale = Vector2(4.76458, 1.20221)
 texture = ExtResource("1_tyj4w")
 
 [node name="LightTrees" type="ParallaxLayer" parent="."]
@@ -54,11 +54,11 @@ position = Vector2(960, 148)
 texture = ExtResource("4_w7eoi")
 
 [node name="Behind" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(2250, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Behind"]
 offset_left = -10.0
 offset_top = -339.0
-offset_right = 1920.0
+offset_right = 2264.0
 offset_bottom = -192.0
 color = Color(0.113725, 0.12549, 0.14902, 1)
