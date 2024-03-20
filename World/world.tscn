@@ -149,7 +149,7 @@ scale = Vector2(0.640001, 0.640001)
 texture = ExtResource("9_e7sct")
 
 [node name="ClockMoss" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(1945, 208)
+position = Vector2(1194, 1181)
 scale = Vector2(0.616667, 0.616667)
 texture = ExtResource("4_xxwft")
 
@@ -245,8 +245,14 @@ rotation = 0.00750591
 texture = ExtResource("9_e7sct")
 
 [node name="Grass29" type="Sprite2D" parent="LevelDesign/BottomGrass"]
-position = Vector2(1963, 1199)
+position = Vector2(1959, 1198)
 rotation = -0.0317826
+texture = ExtResource("9_e7sct")
+
+[node name="Grass42" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1951.95, 990.962)
+rotation = 0.00762079
+scale = Vector2(0.725018, 1)
 texture = ExtResource("9_e7sct")
 
 [node name="Grass31" type="Sprite2D" parent="LevelDesign/BottomGrass"]
@@ -394,6 +400,30 @@ texture = ExtResource("9_e7sct")
 position = Vector2(737, 210)
 texture = ExtResource("9_e7sct")
 
+[node name="Grass16" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(594, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass17" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(436, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass18" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(279, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass19" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(121, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass20" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(73, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass21" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(-74, 210)
+texture = ExtResource("9_e7sct")
+
 [node name="Grass10" type="Sprite2D" parent="LevelDesign/UpperGrass"]
 position = Vector2(2348, 209.5)
 texture = ExtResource("9_e7sct")
@@ -419,7 +449,7 @@ position = Vector2(1938, 209.5)
 texture = ExtResource("9_e7sct")
 
 [node name="StopSignNoFlowersMoss" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(1392, 155)
+position = Vector2(1892, 155)
 scale = Vector2(0.488235, 0.488235)
 texture = ExtResource("12_nxnsj")
 
@@ -495,6 +525,7 @@ color = Color(0, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_top = -434.0
 offset_right = 3672.0
 offset_bottom = 1616.0
@@ -503,6 +534,7 @@ color = Color(0, 0, 0, 1)
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
 position = Vector2(1523, 277)
 scale = Vector2(1.28, 1.76)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
 position = Vector2(1649, 846)
@@ -524,7 +556,7 @@ scale = Vector2(-0.610352, 0.690648)
 
 [node name="Base Wall Invisible4" parent="." instance=ExtResource("3_gev3e")]
 visible = false
-position = Vector2(1888, 262)
+position = Vector2(1952, 262)
 scale = Vector2(0.44, 4.6)
 
 [node name="Base Wall Invisible2" parent="." instance=ExtResource("3_gev3e")]
