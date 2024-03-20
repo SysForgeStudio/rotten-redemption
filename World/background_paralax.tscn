@@ -45,10 +45,20 @@ motion_mirroring = Vector2(1917, 0)
 position = Vector2(953, 133)
 texture = ExtResource("1_qsnej")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+[node name="Road" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1917, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="Road"]
 position = Vector2(960, 148)
 texture = ExtResource("4_w7eoi")
+
+[node name="Behind" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Behind"]
+offset_left = -10.0
+offset_top = -339.0
+offset_right = 1920.0
+offset_bottom = -192.0
+color = Color(0.113725, 0.12549, 0.14902, 1)

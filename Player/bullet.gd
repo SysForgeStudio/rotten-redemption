@@ -5,7 +5,7 @@ var shooting = false
 
 func _physics_process(delta):
 	const SPEED = 6000 
-	const RANGE = 1200
+	const RANGE = 1700
 	
 	if shooting == true:
 		var direction = Vector2.RIGHT.rotated(rotation) #(1,0)
