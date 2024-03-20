@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=17 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dt16bvwahcil4" path="res://World/background_paralax.tscn" id="2_lvui1"]
 [ext_resource type="PackedScene" uid="uid://c4kjxcwaitwcu" path="res://World/wall.tscn" id="3_gev3e"]
 [ext_resource type="Texture2D" uid="uid://cxgrlo83rs6r3" path="res://Menu/barProgress.png" id="3_it0oi"]
+[ext_resource type="Texture2D" uid="uid://8o8in4kdyfw2" path="res://Assets/City Park/Grass.png" id="9_e7sct"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
@@ -92,9 +93,138 @@ _data = {
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_3q8xy")
+metadata/_edit_horizontal_guides_ = [1293.0]
+metadata/_edit_vertical_guides_ = [2633.0]
+
+[node name="Background" parent="." instance=ExtResource("1_u8ywu")]
 
 [node name="TreesParalax" parent="." instance=ExtResource("2_lvui1")]
-layer = 0
+
+[node name="LevelDesign" type="Node" parent="."]
+
+[node name="BottomGrass" type="Node" parent="LevelDesign"]
+
+[node name="Grass" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1827, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass2" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1678, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass3" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1529, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass4" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1403, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass5" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1260, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass6" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1117, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass7" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(979, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass8" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(892, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass9" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(760, 1281)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass10" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2371, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass14" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2505, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass15" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2617, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass11" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2243, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass12" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(2103, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass13" type="Sprite2D" parent="LevelDesign/BottomGrass"]
+position = Vector2(1961, 1280.5)
+texture = ExtResource("9_e7sct")
+
+[node name="UpperGrass" type="Node" parent="LevelDesign"]
+
+[node name="Grass" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1804, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass2" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1655, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass3" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1506, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass4" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1380, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass5" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1237, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass6" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1094, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass7" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(956, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass8" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(869, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass9" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(737, 210)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass10" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(2348, 209.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass14" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(2482, 209.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass15" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(2594, 209.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass11" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(2220, 209.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass12" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(2080, 209.5)
+texture = ExtResource("9_e7sct")
+
+[node name="Grass13" type="Sprite2D" parent="LevelDesign/UpperGrass"]
+position = Vector2(1938, 209.5)
+texture = ExtResource("9_e7sct")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -155,20 +285,21 @@ offset_right = 1945.0
 offset_bottom = 1057.0
 scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1947.0
 offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
-
-[node name="Background" parent="." instance=ExtResource("1_u8ywu")]
+metadata/_edit_lock_ = true
 
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
 position = Vector2(1523, 277)
 scale = Vector2(1.28, 1.76)
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
-position = Vector2(1683, 519)
+position = Vector2(1648, 845)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
@@ -201,8 +332,8 @@ position = Vector2(1567, 933)
 scale = Vector2(10.52, 0.0799999)
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(297, 200)
-scale = Vector2(0.9819, 0.709779)
+position = Vector2(502, 200)
+scale = Vector2(0.726069, 0.73523)
 curve = SubResource("Curve2D_tqtxj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]

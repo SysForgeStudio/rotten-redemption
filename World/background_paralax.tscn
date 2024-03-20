@@ -16,6 +16,7 @@ func _process(delta):
 "
 
 [node name="BackgroundParalax" type="ParallaxBackground"]
+layer = -1
 script = SubResource("GDScript_wg68s")
 
 [node name="BG" type="ParallaxLayer" parent="."]
@@ -45,7 +46,7 @@ position = Vector2(953, 133)
 texture = ExtResource("1_qsnej")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.05, 1)
+motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(1917, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]

@@ -1,9 +1,10 @@
+Node
+ColorRect
+TextureRect
 Sprite2D
 ParallaxLayer
 ParallaxBackground
 CanvasLayer
-TextureRect
-ColorRect
 TextureProgressBar
 AnimationPlayer
 Timer
@@ -11,4 +12,3 @@ ProgressBar
 Label
 CollisionShape2D
 Area2D
-Marker2D
