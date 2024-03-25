@@ -1,7 +1,7 @@
-ColorRect
-ParallaxLayer
 Node
 TextureRect
+ColorRect
+ParallaxLayer
 Sprite2D
 ParallaxBackground
 CanvasLayer

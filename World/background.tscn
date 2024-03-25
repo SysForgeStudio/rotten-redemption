@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://ctr7fqw36hi21"]
+[gd_scene load_steps=2 format=3 uid="uid://ctr7fqw36hi21"]
+
+[ext_resource type="Texture2D" uid="uid://b5b562hdqoij1" path="res://Assets/City Park/bg.png" id="1_p6nqh"]
 
 [node name="Background" type="CanvasLayer"]
 layer = -1
 metadata/_edit_horizontal_guides_ = [280.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Texture" type="TextureRect" parent="."]
 offset_right = 1922.0
 offset_bottom = 1084.0
-color = Color(0.054902, 0.0588235, 0.0705882, 1)
+texture = ExtResource("1_p6nqh")
