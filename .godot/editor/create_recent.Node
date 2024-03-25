@@ -1,5 +1,6 @@
-TextureButton
+Label
 TextureRect
+TextureButton
 ColorRect
 CanvasLayer
 Node
@@ -10,5 +11,4 @@ TextureProgressBar
 AnimationPlayer
 Timer
 ProgressBar
-Label
 CollisionShape2D

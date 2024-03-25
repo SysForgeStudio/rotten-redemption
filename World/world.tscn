@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=29 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ckhwhi3l16w7r" path="res://Assets/City Park/fence.png" id="14_ehehv"]
 [ext_resource type="Texture2D" uid="uid://xh0765il3fi" path="res://Assets/City Park/VendingMachine_Moss.png" id="14_l8nwg"]
 [ext_resource type="Texture2D" uid="uid://dyh45plvd8qj4" path="res://Assets/Forest/walkway.png" id="15_lx3a6"]
+[ext_resource type="FontFile" uid="uid://ppelymumg338" path="res://Menu/ZOMBIES REBORN.ttf" id="18_cfj1s"]
 [ext_resource type="Texture2D" uid="uid://dwo01kcjrvh8v" path="res://Assets/City Park/trash-Recovered.png" id="21_2kixf"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
@@ -659,15 +660,21 @@ texture_under = ExtResource("2_gocse")
 texture_progress = ExtResource("3_it0oi")
 texture_progress_offset = Vector2(10, 10)
 
-[node name="Base" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1758.0
-offset_top = 37.0
-offset_right = -1721.0
-offset_bottom = 60.0
-grow_horizontal = 0
+[node name="Base" type="Label" parent="CanvasLayer/BaseHealth"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -20.0
+offset_right = 22.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("18_cfj1s")
+theme_override_font_sizes/font_size = 40
 text = "Base"
 
 [node name="NightTimer" type="TextureProgressBar" parent="CanvasLayer"]
@@ -684,15 +691,21 @@ texture_under = ExtResource("2_gocse")
 texture_progress = ExtResource("3_it0oi")
 texture_progress_offset = Vector2(10, 10)
 
-[node name="Night" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1799.0
-offset_top = 105.0
-offset_right = -1674.0
-offset_bottom = 128.0
-grow_horizontal = 0
+[node name="Night" type="Label" parent="CanvasLayer/NightTimer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -20.0
+offset_right = 76.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("18_cfj1s")
+theme_override_font_sizes/font_size = 40
 text = "Time until dawn"
 
 [node name="GameOver" type="ColorRect" parent="CanvasLayer"]

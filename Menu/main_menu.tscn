@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0mr7qpf77y6w"]
+[gd_scene load_steps=17 format=3 uid="uid://d0mr7qpf77y6w"]
 
 [ext_resource type="Script" path="res://Menu/main_menu.gd" id="1_6hlw5"]
 [ext_resource type="Texture2D" uid="uid://roc7wbghxqc0" path="res://Menu/trees.png" id="3_t6qs3"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b0ux1kc753pvs" path="res://Menu/play_normal.png" id="9_3qusg"]
 [ext_resource type="Texture2D" uid="uid://bfspixki1ie0g" path="res://Menu/htp_hover.png" id="10_0vg1o"]
 [ext_resource type="Texture2D" uid="uid://bnjnnjnedwsdv" path="res://Menu/play_hover.png" id="10_7ah47"]
+[ext_resource type="FontFile" uid="uid://ppelymumg338" path="res://Menu/ZOMBIES REBORN.ttf" id="11_1mh2a"]
 [ext_resource type="Texture2D" uid="uid://dgcit577vycj5" path="res://Menu/quit_normal.png" id="11_8kyf0"]
 [ext_resource type="Texture2D" uid="uid://duqiddhp8g6dv" path="res://Menu/close_button.png" id="11_hqiyu"]
 [ext_resource type="Texture2D" uid="uid://bwh3ftc34g012" path="res://Menu/quit_hover.png" id="12_3n4j0"]
+[ext_resource type="Texture2D" uid="uid://dnerlyiv1ugth" path="res://Menu/tutorial.png" id="12_8ma0t"]
 
 [sub_resource type="Animation" id="Animation_aw863"]
 length = 0.001
@@ -96,11 +98,15 @@ scale = Vector2(0.438636, 0.438636)
 mouse_filter = 2
 texture = ExtResource("7_d6ibx")
 
-[node name="NextScene" type="ColorRect" parent="CanvasLayer"]
-offset_right = 2299.0
-offset_bottom = 1089.0
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
+[node name="Creds" type="Label" parent="CanvasLayer"]
+offset_left = 43.0
+offset_top = 911.0
+offset_right = 273.0
+offset_bottom = 1024.0
+theme_override_fonts/font = ExtResource("11_1mh2a")
+theme_override_font_sizes/font_size = 50
+text = "By SysForgeStudio
+Arman Habul"
 
 [node name="HTPButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 1363.0
@@ -109,6 +115,12 @@ offset_right = 1863.0
 offset_bottom = 972.0
 texture_normal = ExtResource("9_2q0na")
 texture_hover = ExtResource("10_0vg1o")
+
+[node name="NextScene" type="ColorRect" parent="CanvasLayer"]
+offset_right = 2299.0
+offset_bottom = 1089.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -125,20 +137,42 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -550.0
-offset_top = -447.0
+offset_top = -450.0
 offset_right = 550.0
-offset_bottom = 447.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 color = Color(0, 0, 0, 0.796078)
 
 [node name="CloseButton" type="TextureButton" parent="Popup/PopupScreen"]
-layout_mode = 0
-offset_left = 1046.0
-offset_top = 19.0
-offset_right = 1086.0
-offset_bottom = 59.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 68.0
+grow_horizontal = 0
 texture_normal = ExtResource("11_hqiyu")
+
+[node name="TextureRect" type="TextureRect" parent="Popup/PopupScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -519.0
+offset_top = -452.0
+offset_right = 581.0
+offset_bottom = 448.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_8ma0t")
 
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]
