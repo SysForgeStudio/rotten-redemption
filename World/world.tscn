@@ -173,7 +173,7 @@ scale = Vector2(0.640001, 0.640001)
 texture = ExtResource("9_e7sct")
 
 [node name="ClockMoss" type="Sprite2D" parent="LevelDesign"]
-position = Vector2(1194, 1181)
+position = Vector2(1194, 1113)
 scale = Vector2(0.616667, 0.616667)
 texture = ExtResource("4_xxwft")
 
