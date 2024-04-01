@@ -8,7 +8,7 @@ func _physics_process(delta):
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 	
-	spawn_time = randf_range(0.4,2.5)
+	spawn_time = randf_range(0.5,2.5)
 	get_node("WorldTimer").wait_time = spawn_time
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:

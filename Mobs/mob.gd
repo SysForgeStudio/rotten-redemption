@@ -2,17 +2,16 @@ extends CharacterBody2D
 
 var speed = 1200
 var health = 150
-var speed_multiplier = 2
 var direction_after_change
 var is_eating = false
-
-
+var speed_multiplier = randi_range(2,5)
 @onready var base = get_node("/root/World/Base")
 @onready var player = get_node("/root/World/Player")
 @onready var zombie = get_node("Zombie")
 
 func _ready():
 	zombie.play("Walk")
+	print(speed_multiplier)
 
 func _physics_process(delta):
 	velocity.x = speed * delta * speed_multiplier
