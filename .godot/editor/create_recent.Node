@@ -1,4 +1,5 @@
 AnimationPlayer
+Timer
 Label
 TextureRect
 TextureButton
@@ -9,6 +10,5 @@ ParallaxLayer
 Sprite2D
 ParallaxBackground
 TextureProgressBar
-Timer
 ProgressBar
 CollisionShape2D

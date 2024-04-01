@@ -1,15 +1,24 @@
 extends Node2D
 
 var spawn_time
+var big_wave_start
+var big_wave_initiated = false
 
 func _physics_process(delta):
 	_game_start_fade()
 	
+	big_wave_start = get_node("WinTimer").get_time_left()
 	get_node("CanvasLayer/BaseHealth").value = Game.base_health
 	get_node("CanvasLayer/NightTimer").value = get_node("WinTimer").time_left
 	
-	spawn_time = randf_range(0.5,2.5)
+	if(big_wave_initiated == false):
+		spawn_time = randf_range(0.5,2.5)
 	get_node("WorldTimer").wait_time = spawn_time
+	
+	if(big_wave_start <= 150):
+		get_node("AnimationPlayerBigWave").play("show_label")
+		await get_tree().create_timer(5).timeout
+		start_big_wave()
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
 		_change_scene_to_main_menu()
@@ -48,3 +57,10 @@ func _change_scene_to_main_menu():
 
 func _on_animation_player_fade_out_animation_finished(fade_out):
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+
+func start_big_wave():
+	#play sound
+	big_wave_initiated = true
+	spawn_time = Game.big_wave
+	await get_tree().create_timer(3).timeout
+	big_wave_initiated = false

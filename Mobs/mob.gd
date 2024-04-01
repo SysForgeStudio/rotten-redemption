@@ -11,7 +11,6 @@ var speed_multiplier = randi_range(2,5)
 
 func _ready():
 	zombie.play("Walk")
-	print(speed_multiplier)
 
 func _physics_process(delta):
 	velocity.x = speed * delta * speed_multiplier
