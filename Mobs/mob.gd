@@ -33,5 +33,6 @@ func _change_movement_to_player():
 	
 func take_damage():
 	health -= 50
+	get_node("AnimationPlayer").play("hurt")
 	if health <= 0:
 		queue_free()

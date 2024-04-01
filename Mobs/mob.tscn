@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c2csgaxwfrns0"]
+[gd_scene load_steps=27 format=3 uid="uid://c2csgaxwfrns0"]
 
 [ext_resource type="Script" path="res://Mobs/mob.gd" id="1_5sddr"]
 [ext_resource type="Texture2D" uid="uid://blkmwdlni1i0g" path="res://Assets/Zombie_idle/Zombie_idle1.png" id="2_ou1ek"]
@@ -98,6 +98,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u371c"]
 size = Vector2(38, 120)
 
+[sub_resource type="Animation" id="Animation_up4xc"]
+resource_name = "hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Zombie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.0901961, 0.0588235, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yos5p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Zombie:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6jmx"]
+_data = {
+"RESET": SubResource("Animation_yos5p"),
+"hurt": SubResource("Animation_up4xc")
+}
+
 [node name="Mob" type="CharacterBody2D"]
 collision_mask = 132
 script = ExtResource("1_5sddr")
@@ -113,3 +150,8 @@ frame_progress = 0.220726
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(50, 50)
 shape = SubResource("RectangleShape2D_u371c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e6jmx")
+}
