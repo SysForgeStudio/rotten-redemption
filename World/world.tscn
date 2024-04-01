@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=32 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -101,6 +101,43 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_4sbvv"),
 "fade_out": SubResource("Animation_a8ewr")
+}
+
+[sub_resource type="Animation" id="Animation_ag2ys"]
+resource_name = "show"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/GameOverLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wkxxj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/GameOverLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ry308"]
+_data = {
+"RESET": SubResource("Animation_wkxxj"),
+"show": SubResource("Animation_ag2ys")
 }
 
 [node name="World" type="Node2D"]
@@ -723,13 +760,30 @@ offset_right = 3672.0
 offset_bottom = 1616.0
 color = Color(0, 0, 0, 1)
 
+[node name="GameOverLabel" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -128.5
+offset_right = 359.0
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("18_cfj1s")
+theme_override_font_sizes/font_size = 250
+text = "GAME OVER"
+
 [node name="Base" parent="." instance=ExtResource("2_0s4u6")]
 position = Vector2(1523, 277)
 scale = Vector2(1.28, 1.76)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_7rait")]
-position = Vector2(1649, 846)
+position = Vector2(1661, 622)
 
 [node name="Base Wall Invisible" parent="." instance=ExtResource("3_gev3e")]
 visible = false
@@ -789,6 +843,11 @@ libraries = {
 [node name="AnimationPlayerFadeOut" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vo0sj")
+}
+
+[node name="AnimationPlayerGameOver" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ry308")
 }
 
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
