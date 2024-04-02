@@ -1,14 +1,14 @@
 AnimationPlayer
+Node
+DirectionalLight2D
 Timer
 Label
 TextureRect
 TextureButton
 ColorRect
 CanvasLayer
-Node
 ParallaxLayer
 Sprite2D
 ParallaxBackground
 TextureProgressBar
 ProgressBar
-CollisionShape2D
