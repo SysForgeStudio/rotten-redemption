@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4gsmnpxajbfi"]
+[gd_scene load_steps=7 format=3 uid="uid://c4gsmnpxajbfi"]
 
 [ext_resource type="Texture2D" uid="uid://bsya0f0to5l52" path="res://Menu/paper.png" id="1_vw32e"]
 [ext_resource type="Texture2D" uid="uid://030y45xvnlp5" path="res://Menu/next_night_normal.png" id="2_xyk8h"]
 [ext_resource type="Texture2D" uid="uid://b8i6khumrj2mr" path="res://Menu/next_night_hover.png" id="3_r6fhr"]
 [ext_resource type="Texture2D" uid="uid://cdoj2disxglqs" path="res://Menu/quit_game_normal.png" id="4_xtih8"]
 [ext_resource type="Texture2D" uid="uid://gad1p32lqobx" path="res://Menu/quit_game_hover.png" id="5_sb1p1"]
+[ext_resource type="FontFile" uid="uid://ckm1c6qmo1fsu" path="res://Menu/HANDM___.TTF" id="6_u4p4d"]
 
 [node name="NextNight" type="Node2D"]
 
@@ -24,6 +25,7 @@ offset_bottom = 1040.0
 texture = ExtResource("1_vw32e")
 
 [node name="NextNight" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
 offset_left = 944.0
 offset_top = 856.0
 offset_right = 1283.0
@@ -39,3 +41,16 @@ offset_right = 304.0
 offset_bottom = 921.0
 texture_normal = ExtResource("4_xtih8")
 texture_hover = ExtResource("5_sb1p1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 21.0
+offset_right = 684.0
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_u4p4d")
+theme_override_font_sizes/normal_font_size = 24
+text = "Night 1: The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
+fit_content = true
+scroll_active = false
