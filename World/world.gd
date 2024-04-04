@@ -26,7 +26,7 @@ func _physics_process(delta):
 		dawn_light()
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
-		_change_scene_to_main_menu()
+		change_scene_to_next_night()
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
@@ -72,3 +72,7 @@ func start_big_wave():
 
 func dawn_light():
 	get_node("Lights/AnimationPlayer").play("dawn")
+
+func change_scene_to_next_night():
+	get_node("AnimationPlayerFadeOut").play("fade_out")
+	get_tree().change_scene_to_file("res://World/next_night.tscn")

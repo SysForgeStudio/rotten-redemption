@@ -18,7 +18,6 @@ config/icon="res://icon.png"
 [autoload]
 
 Game="*res://Global/Game.gd"
-Utilities="*res://Global/Utilities.gd"
 
 [display]
 

@@ -1,12 +1,12 @@
+TextureButton
+TextureRect
+ColorRect
+CanvasLayer
 AnimationPlayer
 Node
 DirectionalLight2D
 Timer
 Label
-TextureRect
-TextureButton
-ColorRect
-CanvasLayer
 ParallaxLayer
 Sprite2D
 ParallaxBackground
