@@ -1,30 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4gsmnpxajbfi"]
+[gd_scene load_steps=6 format=3 uid="uid://c4gsmnpxajbfi"]
 
 [ext_resource type="Texture2D" uid="uid://bsya0f0to5l52" path="res://Menu/paper.png" id="1_vw32e"]
 [ext_resource type="Texture2D" uid="uid://030y45xvnlp5" path="res://Menu/next_night_normal.png" id="2_xyk8h"]
 [ext_resource type="Texture2D" uid="uid://b8i6khumrj2mr" path="res://Menu/next_night_hover.png" id="3_r6fhr"]
+[ext_resource type="Texture2D" uid="uid://cdoj2disxglqs" path="res://Menu/quit_game_normal.png" id="4_xtih8"]
+[ext_resource type="Texture2D" uid="uid://gad1p32lqobx" path="res://Menu/quit_game_hover.png" id="5_sb1p1"]
 
 [node name="NextNight" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
 offset_left = -95.0
 offset_right = 2016.0
 offset_bottom = 1132.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Paper" type="TextureRect" parent="CanvasLayer"]
 offset_left = 300.0
 offset_top = 80.0
 offset_right = 1580.0
 offset_bottom = 1040.0
 texture = ExtResource("1_vw32e")
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/TextureRect"]
+[node name="NextNight" type="TextureButton" parent="CanvasLayer/Paper"]
 offset_left = 944.0
 offset_top = 856.0
 offset_right = 1283.0
 offset_bottom = 921.0
 texture_normal = ExtResource("2_xyk8h")
 texture_hover = ExtResource("3_r6fhr")
+
+[node name="QuitGame" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 856.0
+offset_right = 304.0
+offset_bottom = 921.0
+texture_normal = ExtResource("4_xtih8")
+texture_hover = ExtResource("5_sb1p1")
