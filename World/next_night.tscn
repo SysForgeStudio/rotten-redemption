@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4gsmnpxajbfi"]
+[gd_scene load_steps=8 format=3 uid="uid://c4gsmnpxajbfi"]
 
+[ext_resource type="Script" path="res://World/next_night.gd" id="1_6ehq1"]
 [ext_resource type="Texture2D" uid="uid://bsya0f0to5l52" path="res://Menu/paper.png" id="1_vw32e"]
 [ext_resource type="Texture2D" uid="uid://030y45xvnlp5" path="res://Menu/next_night_normal.png" id="2_xyk8h"]
 [ext_resource type="Texture2D" uid="uid://b8i6khumrj2mr" path="res://Menu/next_night_hover.png" id="3_r6fhr"]
@@ -8,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://ckm1c6qmo1fsu" path="res://Menu/HANDM___.TTF" id="6_u4p4d"]
 
 [node name="NextNight" type="Node2D"]
+script = ExtResource("1_6ehq1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -54,3 +56,23 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Night 1: The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
 fit_content = true
 scroll_active = false
+
+[node name="BaseHours" type="HScrollBar" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 417.0
+offset_right = 782.0
+offset_bottom = 445.0
+step = 1.0
+rounded = true
+
+[node name="SuppliesHours" type="HScrollBar" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 500.0
+offset_right = 782.0
+offset_bottom = 528.0
+step = 1.0
+rounded = true
+
+[connection signal="value_changed" from="CanvasLayer/Paper/BaseHours" to="." method="_on_base_hours_value_changed"]
