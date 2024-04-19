@@ -22,7 +22,9 @@ func next_night():
 	Game.game_over = false
 	_screen_blackout()
 	_change_scene()
-	print(Game.night_count)
+
+func change_text():
+	pass
 
 func add_supplies():
 	Game.supplies += hours_supplies * 50
