@@ -14,13 +14,18 @@ func quit():
 	get_tree().quit()
 
 func next_night():
-	pass
+	repair_base()
+	add_supplies()
 
 func add_supplies():
-	pass
+	Game.supplies += hours_supplies * 50
 
 func repair_base():
-	pass
+	var new_health = Game.base_health + (hours_base * 10)
+	if(new_health > 200):
+		new_health = 200
+	
+	Game.base_health = new_health
 
 func increase_hours_left(hours):
 	var temp = Game.hours_left
@@ -60,3 +65,11 @@ func _on_button_up_supplies_pressed():
 func _on_button_down_supplies_pressed():
 	hours_supplies = decrease_hours_left(hours_supplies)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
+
+
+func _on_quit_game_pressed():
+	quit()
+
+
+func _on_next_night_pressed():
+	next_night()

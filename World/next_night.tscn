@@ -178,6 +178,8 @@ theme_override_fonts/font = ExtResource("10_tqbpi")
 theme_override_font_sizes/font_size = 64
 text = "Hours to search for supplies:"
 
+[connection signal="pressed" from="CanvasLayer/Paper/NextNight" to="." method="_on_next_night_pressed"]
+[connection signal="pressed" from="CanvasLayer/Paper/QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Paper/ButtonUpBase" to="." method="_on_button_up_base_pressed"]
 [connection signal="pressed" from="CanvasLayer/Paper/ButtonDownBase" to="." method="_on_button_down_base_pressed"]
 [connection signal="pressed" from="CanvasLayer/Paper/ButtonUpSupplies" to="." method="_on_button_up_supplies_pressed"]
