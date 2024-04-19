@@ -59,8 +59,7 @@ func _game_start_fade():
 func _change_scene_to_main_menu():
 	get_node("AnimationPlayerFadeOut").play("fade_out")
 	get_node("AnimationPlayerGameOver").play("show")
-
-func _on_animation_player_fade_out_animation_finished(fade_out):
+	await get_tree().create_timer(4).timeout
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
 
 func start_big_wave():
@@ -75,4 +74,5 @@ func dawn_light():
 
 func change_scene_to_next_night():
 	get_node("AnimationPlayerFadeOut").play("fade_out")
+	await get_tree().create_timer(4).timeout
 	get_tree().change_scene_to_file("res://World/next_night.tscn")

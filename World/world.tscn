@@ -178,6 +178,21 @@ _data = {
 "show_label": SubResource("Animation_2oeqq")
 }
 
+[sub_resource type="Animation" id="Animation_v7hqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.66]
+}
+
 [sub_resource type="Animation" id="Animation_m5i3l"]
 resource_name = "dawn"
 length = 6.0
@@ -193,21 +208,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.66, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_v7hqj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DirectionalLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.66]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jjngr"]
@@ -828,7 +828,6 @@ offset_right = 3053.0
 offset_bottom = 1385.0
 scale = Vector2(1.28, 1)
 color = Color(0, 0, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="StartGame" type="ColorRect" parent="CanvasLayer"]
 offset_top = -434.0
@@ -923,7 +922,7 @@ autostart = true
 [node name="Mobs" type="Node" parent="."]
 
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 300.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 
@@ -963,4 +962,3 @@ libraries = {
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]
-[connection signal="animation_finished" from="AnimationPlayerFadeOut" to="." method="_on_animation_player_fade_out_animation_finished"]
