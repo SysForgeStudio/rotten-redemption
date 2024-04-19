@@ -17,6 +17,12 @@ func quit():
 func next_night():
 	repair_base()
 	add_supplies()
+	Game.night_count += 1
+	Game.hours_left = 12
+	Game.game_over = false
+	_screen_blackout()
+	_change_scene()
+	print(Game.night_count)
 
 func add_supplies():
 	Game.supplies += hours_supplies * 50
@@ -74,3 +80,19 @@ func _on_quit_game_pressed():
 
 func _on_next_night_pressed():
 	next_night()
+
+func _screen_blackout():
+	var color_tween = get_tree().create_tween()
+	var screen = get_node("CanvasLayer/Blackout")
+	screen.visible = true
+	color_tween.tween_property(screen, "modulate",Color.BLACK,4)
+
+func _change_scene():
+	get_node("AnimationPlayer").play("fade_out")
+
+func change_scene_to_world():
+	get_tree().change_scene_to_file("res://World/world.tscn")
+
+func _on_animation_player_animation_finished(anim_name):
+	if (anim_name == "fade_out"):
+		change_scene_to_world()
