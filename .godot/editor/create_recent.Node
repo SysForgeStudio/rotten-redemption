@@ -1,12 +1,12 @@
+AnimationPlayer
+ColorRect
 Label
 TextureButton
-ColorRect
 SpinBox
 HScrollBar
 RichTextLabel
 TextureRect
 CanvasLayer
-AnimationPlayer
 Node
 DirectionalLight2D
 Timer

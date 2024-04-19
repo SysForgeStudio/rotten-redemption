@@ -76,3 +76,10 @@ func change_scene_to_next_night():
 	get_node("AnimationPlayerFadeOut").play("fade_out")
 	await get_tree().create_timer(4).timeout
 	get_tree().change_scene_to_file("res://World/next_night.tscn")
+
+
+func _on_animation_player_fade_out_animation_finished(fade_out):
+	if(Game.game_over == true):
+		get_tree()._change_scene_to_main_menu()
+	else:
+		get_tree().change_scene_to_next_night()

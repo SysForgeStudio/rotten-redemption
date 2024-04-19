@@ -4,6 +4,8 @@ var hours_base = 0
 var hours_supplies = 0
 
 func _ready():
+	await get_tree().create_timer(1).timeout
+	$AnimationPlayer.play("fade_in")
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
 
