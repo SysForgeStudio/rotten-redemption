@@ -7,6 +7,9 @@ func _ready():
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
 
+func _process(delta):
+	$CanvasLayer/Paper/LabelMaxHours.text = "Hours left: " + str(Game.hours_left)
+
 func quit():
 	get_tree().quit()
 
