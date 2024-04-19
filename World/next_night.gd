@@ -4,8 +4,7 @@ var hours_base = 0
 var hours_supplies = 0
 
 func _ready():
-	get_node("CanvasLayer/Paper/BaseHours").max_value = Game.hours_left
-	get_node("CanvasLayer/Paper/SuppliesHours").max_value = Game.hours_left
+	pass
 
 func quit():
 	get_tree().quit()
@@ -19,5 +18,3 @@ func add_supplies():
 func repair_base():
 	pass
 
-func _on_base_hours_value_changed(value):
-	pass

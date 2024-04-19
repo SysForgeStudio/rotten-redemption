@@ -1,9 +1,10 @@
-HScrollBar
-RichTextLabel
 Label
 TextureButton
-TextureRect
 ColorRect
+SpinBox
+HScrollBar
+RichTextLabel
+TextureRect
 CanvasLayer
 AnimationPlayer
 Node
@@ -11,5 +12,3 @@ DirectionalLight2D
 Timer
 ParallaxLayer
 Sprite2D
-ParallaxBackground
-TextureProgressBar

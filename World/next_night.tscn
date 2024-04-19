@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4gsmnpxajbfi"]
+[gd_scene load_steps=11 format=3 uid="uid://c4gsmnpxajbfi"]
 
 [ext_resource type="Script" path="res://World/next_night.gd" id="1_6ehq1"]
 [ext_resource type="Texture2D" uid="uid://bsya0f0to5l52" path="res://Menu/paper.png" id="1_vw32e"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cdoj2disxglqs" path="res://Menu/quit_game_normal.png" id="4_xtih8"]
 [ext_resource type="Texture2D" uid="uid://gad1p32lqobx" path="res://Menu/quit_game_hover.png" id="5_sb1p1"]
 [ext_resource type="FontFile" uid="uid://ckm1c6qmo1fsu" path="res://Menu/HANDM___.TTF" id="6_u4p4d"]
+[ext_resource type="Texture2D" uid="uid://bj5hupt75n2c1" path="res://Menu/button_up.png" id="8_lo7or"]
+[ext_resource type="Texture2D" uid="uid://bdrcasebt8xut" path="res://Menu/button_down.png" id="9_ofwsa"]
+[ext_resource type="FontFile" uid="uid://ppelymumg338" path="res://Menu/ZOMBIES REBORN.ttf" id="10_tqbpi"]
 
 [node name="NextNight" type="Node2D"]
 script = ExtResource("1_6ehq1")
@@ -44,7 +47,7 @@ offset_bottom = 921.0
 texture_normal = ExtResource("4_xtih8")
 texture_hover = ExtResource("5_sb1p1")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Paper"]
+[node name="NightText" type="RichTextLabel" parent="CanvasLayer/Paper"]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 21.0
@@ -52,41 +55,115 @@ offset_right = 684.0
 offset_bottom = 256.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_u4p4d")
-theme_override_font_sizes/normal_font_size = 24
-text = "Night 1: The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
+theme_override_font_sizes/normal_font_size = 32
+text = "Night 2: The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
 fit_content = true
 scroll_active = false
 
-[node name="BaseHours" type="HScrollBar" parent="CanvasLayer/Paper"]
+[node name="ColorRectBase" type="ColorRect" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 453.0
+offset_right = 857.0
+offset_bottom = 546.0
+color = Color(0, 0, 0, 0.592157)
+
+[node name="LabelBaseHours" type="Label" parent="CanvasLayer/Paper/ColorRectBase"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -86.0
-offset_right = 264.0
-offset_bottom = -58.0
+offset_left = -38.0
+offset_top = -48.0
+offset_right = 38.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-step = 1.0
-rounded = true
+theme_override_fonts/font = ExtResource("6_u4p4d")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="SuppliesHours" type="HScrollBar" parent="CanvasLayer/Paper"]
+[node name="ColorRectSupplies" type="ColorRect" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 568.0
+offset_right = 857.0
+offset_bottom = 661.0
+color = Color(0, 0, 0, 0.592157)
+
+[node name="LabelSuppliesHours" type="Label" parent="CanvasLayer/Paper/ColorRectSupplies"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = 116.0
-offset_right = 264.0
-offset_bottom = 144.0
+offset_left = -38.0
+offset_top = -48.0
+offset_right = 38.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-step = 1.0
-rounded = true
+theme_override_fonts/font = ExtResource("6_u4p4d")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="value_changed" from="CanvasLayer/Paper/BaseHours" to="." method="_on_base_hours_value_changed"]
+[node name="ButtonUpBase" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 452.0
+offset_right = 947.0
+offset_bottom = 500.0
+texture_normal = ExtResource("8_lo7or")
+
+[node name="ButtonDownBase" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 504.0
+offset_right = 947.0
+offset_bottom = 552.0
+texture_normal = ExtResource("9_ofwsa")
+
+[node name="ButtonUpSupplies" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 565.0
+offset_right = 947.0
+offset_bottom = 613.0
+texture_normal = ExtResource("8_lo7or")
+
+[node name="ButtonDownSupplies" type="TextureButton" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 899.0
+offset_top = 617.0
+offset_right = 947.0
+offset_bottom = 665.0
+texture_normal = ExtResource("9_ofwsa")
+
+[node name="LabelBase" type="Label" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 453.0
+offset_right = 702.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_tqbpi")
+theme_override_font_sizes/font_size = 64
+text = "Hours to repair the base:"
+
+[node name="LabelBase2" type="Label" parent="CanvasLayer/Paper"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 568.0
+offset_right = 730.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_tqbpi")
+theme_override_font_sizes/font_size = 64
+text = "Hours to search for supplies:"
