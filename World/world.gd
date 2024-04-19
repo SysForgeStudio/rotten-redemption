@@ -26,7 +26,8 @@ func _physics_process(delta):
 		dawn_light()
 	
 	if(get_node("Mobs").get_children().size() == 0) and Game.game_over == true:
-		change_scene_to_next_night()
+		_screen_blackout()
+		_change_scene()
 
 func _spawn_mob():
 	var new_mob = preload("res://Mobs/mob.tscn").instantiate()
@@ -48,7 +49,9 @@ func _on_base_base_health_depleted():
 	_apply_movement_on_children(get_node("Mobs"))
 	Game.game_over = true
 	get_node("WinTimer").paused = true
-	_change_scene_to_main_menu()
+	get_node("AnimationPlayerGameOver").play("show")
+	_screen_blackout()
+	_change_scene()
 
 func _on_win_timer_timeout():
 	Game.game_over = true
@@ -56,10 +59,7 @@ func _on_win_timer_timeout():
 func _game_start_fade():
 	get_node("AnimationPlayerFadeIn").play("fade_in")
 
-func _change_scene_to_main_menu():
-	get_node("AnimationPlayerFadeOut").play("fade_out")
-	get_node("AnimationPlayerGameOver").play("show")
-	await get_tree().create_timer(4).timeout
+func change_scene_to_main_menu():
 	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
 
 func start_big_wave():
@@ -73,13 +73,20 @@ func dawn_light():
 	get_node("Lights/AnimationPlayer").play("dawn")
 
 func change_scene_to_next_night():
-	get_node("AnimationPlayerFadeOut").play("fade_out")
-	await get_tree().create_timer(4).timeout
 	get_tree().change_scene_to_file("res://World/next_night.tscn")
 
 
 func _on_animation_player_fade_out_animation_finished(fade_out):
-	if(Game.game_over == true):
-		get_tree()._change_scene_to_main_menu()
+	if(Game.base_health > 0):
+		change_scene_to_next_night()
 	else:
-		get_tree().change_scene_to_next_night()
+		change_scene_to_main_menu()
+
+func _screen_blackout():
+	var color_tween = get_tree().create_tween()
+	var screen = get_node("CanvasLayer/GameOver")
+	screen.visible = true
+	color_tween.tween_property(screen, "modulate",Color.BLACK,4)
+
+func _change_scene():
+	get_node("AnimationPlayerFadeOut").play("fade_out")
