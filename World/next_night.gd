@@ -7,6 +7,7 @@ func _ready():
 	$AnimationPlayer.play("fade_in")
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
+	change_text()
 
 func _process(delta):
 	$CanvasLayer/Paper/LabelMaxHours.text = "Hours left: " + str(Game.hours_left)
@@ -24,7 +25,14 @@ func next_night():
 	_change_scene()
 
 func change_text():
-	pass
+	if(Game.night_count == 2):
+		%NightText.text = "Another endless battle for survival, hunger gnawing at me. I've heard rumors of a safe zone, too good to be true. The night feels suffocating; I yearn for companionship. Maybe redemption awaits in the form of a savior's arrival."
+	if(Game.night_count == 3):
+		%NightText.text = "I've scoured every corner for a sanctuary, but the world remains relentless. Still, amidst the chaos, I cling to hope. Perhaps redemption will come with the dawn."
+	if(Game.night_count == 4):
+		%NightText.text = "The darkness weighs heavy on my soul, but I refuse to surrender. I can hear them outside, hungry for flesh and blood. Still, I hold onto the belief that redemption is not beyond reach. Someone must be out there, someone who will come to my rescue."
+	if(Game.night_count == 5):
+		%NightText.text = "Five nights barricaded, five nights surviving. Hope is fading. I have to stay strong."
 
 func add_supplies():
 	Game.supplies += hours_supplies * 50

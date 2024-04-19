@@ -102,6 +102,7 @@ texture_normal = ExtResource("4_xtih8")
 texture_hover = ExtResource("5_sb1p1")
 
 [node name="NightText" type="RichTextLabel" parent="CanvasLayer/Paper"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 25.0
 offset_top = 21.0
@@ -110,7 +111,7 @@ offset_bottom = 256.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("6_u4p4d")
 theme_override_font_sizes/normal_font_size = 32
-text = "Night 2: The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
+text = "The city is chaos incarnate, a graveyard of broken dreams. I've barricaded myself, hoping it'll keep the horrors at bay. I've scavenged supplies, but I'm desperate for rescue. Perhaps redemption lies in someone finding me soon."
 fit_content = true
 scroll_active = false
 
