@@ -170,3 +170,5 @@ text = "Hours to search for supplies:"
 
 [connection signal="pressed" from="CanvasLayer/Paper/ButtonUpBase" to="." method="_on_button_up_base_pressed"]
 [connection signal="pressed" from="CanvasLayer/Paper/ButtonDownBase" to="." method="_on_button_down_base_pressed"]
+[connection signal="pressed" from="CanvasLayer/Paper/ButtonUpSupplies" to="." method="_on_button_up_supplies_pressed"]
+[connection signal="pressed" from="CanvasLayer/Paper/ButtonDownSupplies" to="." method="_on_button_down_supplies_pressed"]

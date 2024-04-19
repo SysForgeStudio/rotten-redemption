@@ -29,7 +29,7 @@ func increase_hours_left(hours):
 	
 	return hours
 
-func decrease_base_hours(hours):
+func decrease_hours_left(hours):
 	var temp = Game.hours_left
 	
 	if(Game.hours_left <= 12 and hours > 0):
@@ -43,14 +43,17 @@ func decrease_base_hours(hours):
 func _on_button_up_base_pressed():
 	hours_base = increase_hours_left(hours_base)
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
-	print(hours_base)
-	print(Game.hours_left)
-	print()
-
 
 func _on_button_down_base_pressed():
-	hours_base = decrease_base_hours(hours_base)
+	hours_base = decrease_hours_left(hours_base)
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
-	print(hours_base)
-	print(Game.hours_left)
-	print()
+
+
+func _on_button_up_supplies_pressed():
+	hours_supplies = increase_hours_left(hours_supplies)
+	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
+
+
+func _on_button_down_supplies_pressed():
+	hours_supplies = decrease_hours_left(hours_supplies)
+	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
