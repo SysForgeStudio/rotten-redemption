@@ -22,7 +22,6 @@ func repair_base():
 func increase_hours_left(hours):
 	var temp = Game.hours_left
 	
-	
 	if(Game.hours_left > 0 and hours <= 12):
 		hours += 1
 		temp -= 1
@@ -33,16 +32,25 @@ func increase_hours_left(hours):
 func decrease_base_hours(hours):
 	var temp = Game.hours_left
 	
-	if(Game.hours_left < 12 and hours > 0): #fix issue here
+	if(Game.hours_left <= 12 and hours > 0):
 		hours -= 1
 		temp += 1
 		Game.hours_left = temp
+		
+	
+	return hours
 
 func _on_button_up_base_pressed():
 	hours_base = increase_hours_left(hours_base)
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
+	print(hours_base)
+	print(Game.hours_left)
+	print()
 
 
 func _on_button_down_base_pressed():
 	hours_base = decrease_base_hours(hours_base)
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
+	print(hours_base)
+	print(Game.hours_left)
+	print()
