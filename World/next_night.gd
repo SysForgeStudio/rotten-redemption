@@ -7,6 +7,7 @@ func _ready():
 	$AnimationPlayer.play("fade_in")
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
+	Game.hours_left = 12
 	change_text()
 
 func _process(delta):
@@ -19,7 +20,6 @@ func next_night():
 	repair_base()
 	add_supplies()
 	Game.night_count += 1
-	Game.hours_left = 12
 	Game.game_over = false
 	_screen_blackout()
 	_change_scene()
