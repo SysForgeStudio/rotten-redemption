@@ -4,9 +4,13 @@ var hours_base = 0
 var hours_supplies = 0
 
 func _ready():
+	Game.supplies_spending *= Game.night_count 
 	$AnimationPlayer.play("fade_in")
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
+	$CanvasLayer/Paper/LabelCurrentHealth.text = "Base shape: " + str(Game.base_health)
+	$CanvasLayer/Paper/LabelCurrentSupplies.text = "Supplies left: " + str(Game.supplies)
+	$CanvasLayer/Paper/LabelSuppliesSpending.text = "Supplies that will be spent: " + str(Game.supplies_spending)
 	Game.hours_left = 12
 	change_text()
 
@@ -21,6 +25,9 @@ func next_night():
 	add_supplies()
 	Game.night_count += 1
 	Game.game_over = false
+	Game.supplies -= Game.supplies_spending
+	if(Game.supplies <= 0):
+		Game.game_over = true
 	_screen_blackout()
 	_change_scene()
 
@@ -103,6 +110,20 @@ func _change_scene():
 func change_scene_to_world():
 	get_tree().change_scene_to_file("res://World/world.tscn")
 
+func game_over():
+	var label1 = get_node("CanvasLayer/LabelGameOver")
+	var label2 = get_node("CanvasLayer/LabelGameOverText")
+	print(label1)
+	print(label2)
+	label1.show()
+	label2.show()
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_file("res://Menu/main_menu.tscn")
+
 func _on_animation_player_animation_finished(anim_name):
 	if (anim_name == "fade_out"):
-		change_scene_to_world()
+		if(Game.game_over == false):
+			change_scene_to_world()
+		else:
+			game_over()
+		
