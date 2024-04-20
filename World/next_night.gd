@@ -113,8 +113,6 @@ func change_scene_to_world():
 func game_over():
 	var label1 = get_node("CanvasLayer/LabelGameOver")
 	var label2 = get_node("CanvasLayer/LabelGameOverText")
-	print(label1)
-	print(label2)
 	label1.show()
 	label2.show()
 	await get_tree().create_timer(5).timeout
