@@ -1,7 +1,7 @@
+TextureButton
 Label
 AnimationPlayer
 ColorRect
-TextureButton
 SpinBox
 HScrollBar
 RichTextLabel
