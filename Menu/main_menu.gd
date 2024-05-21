@@ -5,6 +5,10 @@ func _on_play_button_pressed():
 	_change_scene()
 	Game.base_health = 200
 	Game.game_over = false
+	Game.supplies = 250
+	Game.supplies_spending = 100
+	Game.night_count = 1
+	Game.hours_left = 12
 
 func _on_quit_button_pressed():
 	get_tree().quit()
