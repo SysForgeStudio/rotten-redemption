@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var speed = 1200
 var health = 150
 var direction_after_change
 var is_eating = false
@@ -13,7 +12,7 @@ func _ready():
 	zombie.play("Walk")
 
 func _physics_process(delta):
-	velocity.x = speed * delta * speed_multiplier
+	velocity.x = Game.mob_speed * delta * speed_multiplier
 	move_and_slide()
 	
 	if velocity.x <= 1:
@@ -22,11 +21,11 @@ func _physics_process(delta):
 		zombie.play("Idle")
 
 func _change_movement_to_player():
-	speed = 100
+	Game.mob_speed = 100
 	zombie.play("Walk")
 	is_eating = false
 	direction_after_change = global_position.direction_to(player.global_position)
-	velocity = direction_after_change * speed
+	velocity = direction_after_change * Game.mob_speed
 	move_and_slide()
 	
 func take_damage():

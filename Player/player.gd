@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-const SPEED = 15000
 var shooting = false
 
 @onready var anim = get_node("AnimationPlayer")
@@ -11,7 +10,7 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
-	velocity = direction * SPEED * delta
+	velocity = direction * Game.player_speed * delta
 	
 	if Input.is_action_just_pressed("shoot") and shooting == false:
 		shoot_gun()

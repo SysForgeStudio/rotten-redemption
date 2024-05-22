@@ -4,3 +4,5 @@ res://World/world.gd
 res://Global/Game.gd
 res://World/world.tscn
 res://World/next_night.tscn
+res://Player/player.gd
+res://Mobs/mob.gd

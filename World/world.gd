@@ -4,9 +4,14 @@ var spawn_time
 var big_wave_start
 var big_wave_initiated = false
 var dawn
+var is_paused = false
 
 func _physics_process(delta):
 	_game_start_fade()
+	
+	if Input.is_action_pressed("pause"):
+		get_tree().paused = true
+		$PauseMenu/CanvasLayer/PauseMenuBg.visible = true
 	
 	big_wave_start = get_node("WinTimer").get_time_left()
 	dawn = get_node("WinTimer").get_time_left()
@@ -90,3 +95,10 @@ func _screen_blackout():
 
 func _change_scene():
 	get_node("AnimationPlayerFadeOut").play("fade_out")
+
+func _on_button_resume_pressed():
+	get_tree().paused = false
+	$PauseMenu/CanvasLayer/PauseMenuBg.visible = false
+
+func _on_button_quit_pressed():
+	get_tree().quit()

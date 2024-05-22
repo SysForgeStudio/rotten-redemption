@@ -1,13 +1,13 @@
 TextureButton
 Label
-AnimationPlayer
 ColorRect
+CanvasLayer
+Node
+AnimationPlayer
 SpinBox
 HScrollBar
 RichTextLabel
 TextureRect
-CanvasLayer
-Node
 DirectionalLight2D
 Timer
 ParallaxLayer

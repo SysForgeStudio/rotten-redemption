@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dnjbowjc3sx32"]
+[gd_scene load_steps=42 format=3 uid="uid://dnjbowjc3sx32"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_3q8xy"]
 [ext_resource type="PackedScene" uid="uid://ctr7fqw36hi21" path="res://World/background.tscn" id="1_u8ywu"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://dyh45plvd8qj4" path="res://Assets/Forest/walkway.png" id="15_lx3a6"]
 [ext_resource type="FontFile" uid="uid://ppelymumg338" path="res://Menu/ZOMBIES REBORN.ttf" id="18_cfj1s"]
 [ext_resource type="Texture2D" uid="uid://dwo01kcjrvh8v" path="res://Assets/City Park/trash-Recovered.png" id="21_2kixf"]
+[ext_resource type="Texture2D" uid="uid://dj5romr4stisb" path="res://Menu/resume.png" id="22_t0x0m"]
+[ext_resource type="Texture2D" uid="uid://c4o13vmljp0jr" path="res://Menu/resume_hover.png" id="23_8ypse"]
+[ext_resource type="Texture2D" uid="uid://baw4pc542d02e" path="res://Menu/quit_game_pause.png" id="24_0m3w4"]
+[ext_resource type="Texture2D" uid="uid://ii2olngi44l" path="res://Menu/quit_game_pause_hover.png" id="25_xwum5"]
 
 [sub_resource type="Curve2D" id="Curve2D_tqtxj"]
 _data = {
@@ -799,7 +803,7 @@ offset_top = 95.0
 offset_right = -1562.0
 offset_bottom = 140.0
 grow_horizontal = 0
-max_value = 300.0
+max_value = 240.0
 texture_under = ExtResource("2_gocse")
 texture_progress = ExtResource("3_it0oi")
 texture_progress_offset = Vector2(10, 10)
@@ -923,6 +927,7 @@ autostart = true
 [node name="Mobs" type="Node" parent="."]
 
 [node name="WinTimer" type="Timer" parent="."]
+wait_time = 240.0
 one_shot = true
 autostart = true
 
@@ -959,7 +964,67 @@ libraries = {
 "": SubResource("AnimationLibrary_jjngr")
 }
 
+[node name="PauseMenu" type="Node" parent="."]
+process_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PauseMenu"]
+
+[node name="PauseMenuBg" type="ColorRect" parent="PauseMenu/CanvasLayer"]
+visible = false
+offset_left = 631.0
+offset_top = 141.0
+offset_right = 1329.0
+offset_bottom = 750.0
+color = Color(0, 0, 0, 0.603922)
+
+[node name="PauseLabel" type="Label" parent="PauseMenu/CanvasLayer/PauseMenuBg"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("18_cfj1s")
+theme_override_font_sizes/font_size = 90
+text = "Paused"
+
+[node name="ButtonResume" type="TextureButton" parent="PauseMenu/CanvasLayer/PauseMenuBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -44.5
+offset_right = 169.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("22_t0x0m")
+texture_hover = ExtResource("23_8ypse")
+
+[node name="ButtonQuit" type="TextureButton" parent="PauseMenu/CanvasLayer/PauseMenuBg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = 55.5
+offset_right = 169.5
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("24_0m3w4")
+texture_hover = ExtResource("25_xwum5")
+
 [connection signal="base_health_depleted" from="Base" to="." method="_on_base_base_health_depleted"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="timeout" from="WinTimer" to="." method="_on_win_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayerFadeOut" to="." method="_on_animation_player_fade_out_animation_finished"]
+[connection signal="pressed" from="PauseMenu/CanvasLayer/PauseMenuBg/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="PauseMenu/CanvasLayer/PauseMenuBg/ButtonQuit" to="." method="_on_button_quit_pressed"]
