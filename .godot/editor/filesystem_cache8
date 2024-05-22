@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1716314318
+::res://::1716398380
 export_presets.cfg::TextFile::-1::1716313828::0::1::::<><>::
 icon.png::CompressedTexture2D::3357723978474998972::1716313828::1716313828::1::::<><>::
 README.md::TextFile::-1::1716313828::0::1::::<><>::
@@ -126,10 +126,10 @@ Zombie_Walk7.png::CompressedTexture2D::3978362790523667149::1716313828::17163138
 Zombie_Walk8.png::CompressedTexture2D::2041743378363226814::1716313828::1716313828::1::::<><>::
 Zombie_Walk9.png::CompressedTexture2D::4153417662729220480::1716313828::1716313828::1::::<><>::
 Zombie_Walk10.png::CompressedTexture2D::4303403779747063553::1716313828::1716313828::1::::<><>::
-::res://Global/::1716313828
+::res://Global/::1716325529
 Game.gd::GDScript::-1::1716313828::0::1::::<>Node<>::
-Game.tscn::PackedScene::7837498285483168842::1716313828::0::1::::<><>::
-::res://Menu/::1716317119
+Game.tscn::PackedScene::7837498285483168842::1716325529::0::1::::<><>::
+::res://Menu/::1716317641
 barProgress.png::CompressedTexture2D::6400623657796390586::1716313828::1716313828::1::::<><>::
 barUnder.png::CompressedTexture2D::2532784348556083472::1716313828::1716313828::1::::<><>::
 button_down.png::CompressedTexture2D::2632204022083417711::1716313828::1716313828::1::::<><>::
@@ -140,7 +140,7 @@ htp_hover.png::CompressedTexture2D::2775449966582720584::1716313828::1716313828:
 htp_normal.png::CompressedTexture2D::8402606895729563980::1716313828::1716313828::1::::<><>::
 logo.png::CompressedTexture2D::1055625757623618040::1716313828::1716313828::1::::<><>::
 main_menu.gd::GDScript::-1::1716313987::0::1::::<>Node2D<>::
-main_menu.tscn::PackedScene::8939845873177711604::1716317022::0::1::::<><>::res://Menu/main_menu.gd<>uid://roc7wbghxqc0::::res://Menu/trees.png<>uid://pbmacktu31ei::::res://Menu/logo.png<>uid://bgc3mufqgxja::::res://Assets/city 1/banner.png<>uid://dryjycmy7cnea::::res://Menu/htp_normal.png<>uid://b0ux1kc753pvs::::res://Menu/play_normal.png<>uid://bfspixki1ie0g::::res://Menu/htp_hover.png<>uid://bnjnnjnedwsdv::::res://Menu/play_hover.png<>uid://ppelymumg338::::res://Menu/ZOMBIES REBORN.ttf<>uid://dgcit577vycj5::::res://Menu/quit_normal.png<>uid://duqiddhp8g6dv::::res://Menu/close_button.png<>uid://bwh3ftc34g012::::res://Menu/quit_hover.png<>uid://dnerlyiv1ugth::::res://Menu/tutorial.png
+main_menu.tscn::PackedScene::8939845873177711604::1716317641::0::1::::<><>::res://Menu/main_menu.gd<>uid://roc7wbghxqc0::::res://Menu/trees.png<>uid://pbmacktu31ei::::res://Menu/logo.png<>uid://bgc3mufqgxja::::res://Assets/city 1/banner.png<>uid://dryjycmy7cnea::::res://Menu/htp_normal.png<>uid://b0ux1kc753pvs::::res://Menu/play_normal.png<>uid://bfspixki1ie0g::::res://Menu/htp_hover.png<>uid://bnjnnjnedwsdv::::res://Menu/play_hover.png<>uid://ppelymumg338::::res://Menu/ZOMBIES REBORN.ttf<>uid://dgcit577vycj5::::res://Menu/quit_normal.png<>uid://duqiddhp8g6dv::::res://Menu/close_button.png<>uid://bwh3ftc34g012::::res://Menu/quit_hover.png<>uid://dnerlyiv1ugth::::res://Menu/tutorial.png
 next_night_hover.png::CompressedTexture2D::4721068029623324781::1716313828::1716313828::1::::<><>::
 next_night_normal.png::CompressedTexture2D::1814086022532251104::1716313828::1716313828::1::::<><>::
 next_page.png::CompressedTexture2D::9159691991631123141::1716317117::1716317119::1::::<><>::
@@ -164,13 +164,13 @@ bullet.tscn::PackedScene::3783647074090248116::1716313828::0::1::::<><>::res://P
 player.gd::GDScript::-1::1716313828::0::1::::<>CharacterBody2D<>::
 player.tscn::PackedScene::1164848609047784624::1716313828::0::1::::<><>::res://Player/player.gd<>uid://ci6u375gmdi8w::::res://Assets/PlayerAssets/Idle/torso_idle0.png<>uid://d3u62k32ft5mj::::res://Assets/PlayerAssets/Idle/torso_idle1.png<>uid://dh5iv8uxbo8oh::::res://Assets/PlayerAssets/Idle/torso_idle2.png<>uid://dg5j6r4nll5dg::::res://Assets/PlayerAssets/Idle/torso_idle3.png<>uid://tk28hva6p8ns::::res://Assets/PlayerAssets/Run/torso_run0.png<>uid://cqpinllo0yoy1::::res://Assets/PlayerAssets/Run/torso_run1.png<>uid://b5sr6l80p4y84::::res://Assets/PlayerAssets/Run/torso_run2.png<>uid://bprlhe28x5wii::::res://Assets/PlayerAssets/Run/torso_run3.png<>uid://cgcd4h6t2cpcl::::res://Assets/PlayerAssets/Run/torso_run4.png<>uid://c8iobjecmb3k6::::res://Assets/PlayerAssets/Run/torso_run5.png<>uid://jbfodlsjys0::::res://Assets/PlayerAssets/Run/torso_run6.png<>uid://cen8uu0srkcny::::res://Assets/PlayerAssets/Run/torso_run7.png<>uid://0jhw0id7b0f8::::res://Assets/PlayerAssets/Shoot/shoot0.png<>uid://dojg74jmuwjh7::::res://Assets/PlayerAssets/Shoot/shoot1.png<>uid://c3x4mgskw63sq::::res://Assets/PlayerAssets/Shoot/shoot2.png<>uid://c8hkjn1a6yjwq::::res://Assets/PlayerAssets/Shoot/shoot3.png<>res://Player/shooting_range.gd
 shooting_range.gd::GDScript::-1::1716313828::0::1::::<>Area2D<>::
-::res://World/::1716315572
+::res://World/::1716325529
 background.tscn::PackedScene::6143476566739087992::1716313828::0::1::::<><>::uid://b5b562hdqoij1::::res://Assets/City Park/bg.png
 background_paralax.tscn::PackedScene::8548409051362630707::1716313828::0::1::::<><>::uid://bwfv4fjn2nkfa::::res://Assets/Forest/trees.png<>uid://d3d1j18qy6ls1::::res://Assets/Forest/bg_trees.png<>uid://b1bp87slsjaa4::::res://Assets/Forest/light_trees.png<>uid://b7u5fbcu8wqw5::::res://Assets/Forest/road.png
 base.gd::GDScript::-1::1716313828::0::1::::<>StaticBody2D<>::
 base.tscn::PackedScene::7612485560152738466::1716313828::0::1::::<><>::res://World/base.gd<>uid://sjri063t4otk::::res://Assets/city 1/base.png<>uid://b1nwpwu57cjh0::::res://Assets/city 1/base_walls.png
-next_night.gd::GDScript::-1::1716315572::0::1::::<>Node2D<>::
+next_night.gd::GDScript::-1::1716325476::0::1::::<>Node2D<>::
 next_night.tscn::PackedScene::6821819141831142942::1716313828::0::1::::<><>::res://World/next_night.gd<>uid://bsya0f0to5l52::::res://Menu/paper.png<>uid://030y45xvnlp5::::res://Menu/next_night_normal.png<>uid://b8i6khumrj2mr::::res://Menu/next_night_hover.png<>uid://cdoj2disxglqs::::res://Menu/quit_game_normal.png<>uid://gad1p32lqobx::::res://Menu/quit_game_hover.png<>uid://ckm1c6qmo1fsu::::res://Menu/HANDM___.TTF<>uid://bj5hupt75n2c1::::res://Menu/button_up.png<>uid://bdrcasebt8xut::::res://Menu/button_down.png<>uid://ppelymumg338::::res://Menu/ZOMBIES REBORN.ttf
 wall.tscn::PackedScene::6829549275668310216::1716313828::0::1::::<><>::
-world.gd::GDScript::-1::1716315572::0::1::::<>Node2D<>::
-world.tscn::PackedScene::8090383305813663359::1716313828::0::1::::<><>::res://World/world.gd<>uid://ctr7fqw36hi21::::res://World/background.tscn<>uid://dgpsr34ysnpew::::res://World/base.tscn<>uid://qui5exiishrc::::res://Player/player.tscn<>uid://bcc5t86xfk08k::::res://Menu/barUnder.png<>uid://dt16bvwahcil4::::res://World/background_paralax.tscn<>uid://c4kjxcwaitwcu::::res://World/wall.tscn<>uid://cxgrlo83rs6r3::::res://Menu/barProgress.png<>uid://b3mpt6ulskra6::::res://Assets/City Park/bench02-Recovered.png<>uid://bwiyq614pukgw::::res://Assets/City Park/Clock_Moss.png<>uid://b7x4x0aa1dvul::::res://Assets/City Park/Grass_WTrash.png<>uid://trlghlaib7tc::::res://Assets/City Park/Map_Moss.png<>uid://8o8in4kdyfw2::::res://Assets/City Park/Grass.png<>uid://dgxkitgo746t0::::res://Assets/City Park/StopSign_NoFlowers_Moss.png<>uid://cf7k8oa6y0kw7::::res://Assets/City Park/TrafficLight_Moss.png<>uid://c7agyhult8wc8::::res://Assets/City Park/5.png<>uid://ckhwhi3l16w7r::::res://Assets/City Park/fence.png<>uid://xh0765il3fi::::res://Assets/City Park/VendingMachine_Moss.png<>uid://dyh45plvd8qj4::::res://Assets/Forest/walkway.png<>uid://ppelymumg338::::res://Menu/ZOMBIES REBORN.ttf<>uid://dwo01kcjrvh8v::::res://Assets/City Park/trash-Recovered.png
+world.gd::GDScript::-1::1716325477::0::1::::<>Node2D<>::
+world.tscn::PackedScene::8090383305813663359::1716325529::0::1::::<><>::res://World/world.gd<>uid://ctr7fqw36hi21::::res://World/background.tscn<>uid://dgpsr34ysnpew::::res://World/base.tscn<>uid://qui5exiishrc::::res://Player/player.tscn<>uid://bcc5t86xfk08k::::res://Menu/barUnder.png<>uid://dt16bvwahcil4::::res://World/background_paralax.tscn<>uid://c4kjxcwaitwcu::::res://World/wall.tscn<>uid://cxgrlo83rs6r3::::res://Menu/barProgress.png<>uid://b3mpt6ulskra6::::res://Assets/City Park/bench02-Recovered.png<>uid://bwiyq614pukgw::::res://Assets/City Park/Clock_Moss.png<>uid://b7x4x0aa1dvul::::res://Assets/City Park/Grass_WTrash.png<>uid://trlghlaib7tc::::res://Assets/City Park/Map_Moss.png<>uid://8o8in4kdyfw2::::res://Assets/City Park/Grass.png<>uid://dgxkitgo746t0::::res://Assets/City Park/StopSign_NoFlowers_Moss.png<>uid://cf7k8oa6y0kw7::::res://Assets/City Park/TrafficLight_Moss.png<>uid://c7agyhult8wc8::::res://Assets/City Park/5.png<>uid://ckhwhi3l16w7r::::res://Assets/City Park/fence.png<>uid://xh0765il3fi::::res://Assets/City Park/VendingMachine_Moss.png<>uid://dyh45plvd8qj4::::res://Assets/Forest/walkway.png<>uid://ppelymumg338::::res://Menu/ZOMBIES REBORN.ttf<>uid://dwo01kcjrvh8v::::res://Assets/City Park/trash-Recovered.png

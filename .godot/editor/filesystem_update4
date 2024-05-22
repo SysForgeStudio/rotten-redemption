@@ -1,3 +1,6 @@
-res://Menu/main_menu.tscn
+res://Global/Game.tscn
 res://World/next_night.gd
 res://World/world.gd
+res://Global/Game.gd
+res://World/world.tscn
+res://World/next_night.tscn
