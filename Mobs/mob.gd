@@ -32,4 +32,5 @@ func take_damage():
 	health -= 50
 	get_node("AnimationPlayer").play("hurt")
 	if health <= 0:
+		Game.zombies_killed += 1
 		queue_free()
