@@ -9,7 +9,7 @@ func _ready():
 	$AnimationPlayer.play("fade_in")
 	$CanvasLayer/Paper/ColorRectBase/LabelBaseHours.text = str(hours_base)
 	$CanvasLayer/Paper/ColorRectSupplies/LabelSuppliesHours.text = str(hours_supplies)
-	$CanvasLayer/Paper/LabelCurrentHealth.text = "Base shape: " + str(Game.base_health)
+	$CanvasLayer/Paper/LabelCurrentHealth.text = "Base shape: " + str(round(Game.base_health))
 	$CanvasLayer/Paper/LabelCurrentSupplies.text = "Supplies left: " + str(Game.supplies)
 	$CanvasLayer/Paper/LabelSuppliesSpending.text = "Supplies that will be spent: " + str(Game.supplies_spending)
 	Game.hours_left = 12
